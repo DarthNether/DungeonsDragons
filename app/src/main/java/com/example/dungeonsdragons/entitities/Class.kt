@@ -4,10 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "abilities_table")
-data class Ability(
+@Entity(tableName = "classes_table")
+data class Class(
     @PrimaryKey(autoGenerate = true) val index: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "full_name") val full_name: String,
-    @ColumnInfo(name = "desc") val desc: String
+    @ColumnInfo(name = "hit_die") val hit_die: Int
 )
