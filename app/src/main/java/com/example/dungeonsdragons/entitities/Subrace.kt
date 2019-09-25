@@ -18,10 +18,10 @@ data class Subrace(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "race") val race: Int,
     @ColumnInfo(name = "desc") val desc: String,
-    @ColumnInfo(name = "str_bonus") val str_bonus: Int,
-    @ColumnInfo(name = "dex_bonus") val dex_bonus: Int,
-    @ColumnInfo(name = "con_bonus") val cons_bonus: Int,
-    @ColumnInfo(name = "int_bonus") val int_bonus: Int,
-    @ColumnInfo(name = "wis_bonus") val wis_bonus: Int,
-    @ColumnInfo(name = "cha_bonus") val cha_bonus: Int
+    @ColumnInfo(name = "str_bonus") val str_bonus: Int?,
+    @ColumnInfo(name = "dex_bonus") val dex_bonus: Int?,
+    @ColumnInfo(name = "con_bonus") val cons_bonus: Int?,
+    @ColumnInfo(name = "int_bonus") val int_bonus: Int?,
+    @ColumnInfo(name = "wis_bonus") val wis_bonus: Int?,
+    @ColumnInfo(name = "cha_bonus") val cha_bonus: Int?
 )

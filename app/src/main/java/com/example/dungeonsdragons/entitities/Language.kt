@@ -8,5 +8,7 @@ import androidx.room.PrimaryKey
 data class Language(
     @PrimaryKey(autoGenerate = true) val index: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "type") val type: String
+    @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "typical_speakers") val typical_speakers: String,
+    @ColumnInfo(name = "script") val script: String
 )
