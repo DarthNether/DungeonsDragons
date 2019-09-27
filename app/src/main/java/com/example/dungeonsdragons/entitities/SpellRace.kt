@@ -6,22 +6,21 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "proficiencies_classes_table",
+    tableName = "spells_races_table",
     foreignKeys = [
         ForeignKey(
-            entity = Proficiency::class,
+            entity = Spell::class,
             parentColumns = arrayOf("index"),
-            childColumns = arrayOf("proficiency")
+            childColumns = arrayOf("spell")
         ),
         ForeignKey(
-            entity = Class::class,
+            entity = Race::class,
             parentColumns = arrayOf("index"),
-            childColumns = arrayOf("class")
-        )
-    ]
+            childColumns = arrayOf("race")
+        )]
 )
-data class ProficiencyClass(
+data class SpellRace(
     @PrimaryKey(autoGenerate = true) val index: Int,
-    @ColumnInfo(name = "proficiency") val proficiency: Int,
-    @ColumnInfo(name = "class") val clazz: Int
+    @ColumnInfo(name = "spell") val spell: Int,
+    @ColumnInfo(name = "race") val race: Int
 )

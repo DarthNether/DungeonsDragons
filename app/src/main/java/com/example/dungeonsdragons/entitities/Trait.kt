@@ -25,5 +25,6 @@ data class Trait(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "desc") val desc: String,
     @ColumnInfo(name = "race") val race: Int,
-    @ColumnInfo(name = "subrace") val subrace: Int?
+    @ColumnInfo(name = "subrace") val subrace: Int?,
+    @ColumnInfo(name = "level") val level: Int?
 )
