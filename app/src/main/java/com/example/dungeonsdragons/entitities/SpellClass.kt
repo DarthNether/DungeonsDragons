@@ -17,7 +17,8 @@ import androidx.room.PrimaryKey
             entity = Class::class,
             parentColumns = arrayOf("index"),
             childColumns = arrayOf("clazz")
-        )]
+        )
+    ]
 )
 data class SpellClass(
     @PrimaryKey(autoGenerate = true) val index: Int,

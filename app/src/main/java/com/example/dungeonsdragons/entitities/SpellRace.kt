@@ -17,7 +17,8 @@ import androidx.room.PrimaryKey
             entity = Race::class,
             parentColumns = arrayOf("index"),
             childColumns = arrayOf("race")
-        )]
+        )
+    ]
 )
 data class SpellRace(
     @PrimaryKey(autoGenerate = true) val index: Int,
