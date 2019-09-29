@@ -1,19 +1,18 @@
 package com.example.dungeonsdragons.dao
 
 import androidx.room.*
-import com.example.dungeonsdragons.entitities.Armor
 import com.example.dungeonsdragons.entitities.Background
 
 @Dao
 interface BackgroundDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertBackgrounds(vararg armors: Armor)
+    fun InsertBackgrounds(vararg background: Background)
 
     @Update
-    fun UpdateBackgrounds(vararg backgrounds: Background)
+    fun UpdateBackgrounds(vararg background: Background)
 
     @Delete
-    fun DeleteBackgrounds(vararg backgrounds: Background)
+    fun DeleteBackgrounds(vararg background: Background)
 
     @Query("SELECT * FROM backgrounds_table")
     fun SelectAllBackgrounds(): Array<Background>

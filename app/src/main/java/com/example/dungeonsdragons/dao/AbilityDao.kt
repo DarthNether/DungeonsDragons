@@ -6,10 +6,10 @@ import com.example.dungeonsdragons.entitities.Ability
 @Dao
 interface AbilityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertAbilities(vararg abilities: Ability)
+    fun InsertAbilities(vararg ability: Ability)
 
     @Update
-    fun updateAbilities(vararg abilities: Ability)
+    fun updateAbilities(vararg ability: Ability)
 
     @Delete
     fun deleteAbilities(vararg ability: Ability)

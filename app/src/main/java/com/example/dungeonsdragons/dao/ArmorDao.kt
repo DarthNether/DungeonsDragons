@@ -7,7 +7,7 @@ import com.example.dungeonsdragons.entitities.Armor
 interface ArmorDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertArmors(vararg armors: Armor)
+    fun InsertArmors(vararg armor: Armor)
 
     @Update
     fun UpdateArmors(vararg armor: Armor)
