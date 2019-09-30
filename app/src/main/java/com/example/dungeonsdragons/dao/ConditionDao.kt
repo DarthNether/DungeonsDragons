@@ -6,20 +6,20 @@ import com.example.dungeonsdragons.entitities.Condition
 @Dao
 interface ConditionDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertConditions(vararg conditions: Condition)
+    fun insertConditions(vararg conditions: Condition)
 
     @Update
-    fun UpdateConditions(vararg conditions: Condition)
+    fun updateConditions(vararg conditions: Condition)
 
     @Delete
-    fun DeleteConditions(vararg conditions: Condition)
+    fun deleteConditions(vararg conditions: Condition)
 
     @Query("SELECT * FROM conditions_table")
-    fun SelectAllConditions(): Array<Condition>
+    fun selectAllConditions(): Array<Condition>
 
     @Query("SELECT * FROM conditions_table WHERE `index` = :index")
-    fun SelectConditionByIndex(index: Int): Array<Condition>
+    fun selectConditionByIndex(index: Int): Array<Condition>
 
     @Query("SELECT * FROM conditions_table WHERE name LIKE :name")
-    fun SelectConditionByName(name: String): Array<Condition>
+    fun selectConditionByName(name: String): Array<Condition>
 }

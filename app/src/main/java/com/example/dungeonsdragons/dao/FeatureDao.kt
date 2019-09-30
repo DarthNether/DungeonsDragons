@@ -6,26 +6,26 @@ import com.example.dungeonsdragons.entitities.Feature
 @Dao
 interface FeatureDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertFeatures(vararg feature: Feature)
+    fun insertFeatures(vararg feature: Feature)
 
     @Update
-    fun UpdateFeatures(vararg feature: Feature)
+    fun updateFeatures(vararg feature: Feature)
 
     @Delete
-    fun DeleteFeatures(vararg feature: Feature)
+    fun deleteFeatures(vararg feature: Feature)
 
     @Query("SELECT * FROM features_table")
-    fun SelectAllFeatures(): Array<Feature>
+    fun selectAllFeatures(): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE `index` = :index")
-    fun SelectFeaturesByIndex(index: Int): Array<Feature>
+    fun selectFeaturesByIndex(index: Int): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE name LIKE :name")
-    fun SelectFeaturseByName(name: String): Array<Feature>
+    fun selectFeaturseByName(name: String): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE class = :clazz")
-    fun SelectFeaturesByClass(clazz: Int)
+    fun selectFeaturesByClass(clazz: Int)
 
     @Query("SELECT * FROM features_table WHERE subclass = :subclass")
-    fun SelectFeaturesBySubClass(subclass: Int)
+    fun selectFeaturesBySubClass(subclass: Int)
 }

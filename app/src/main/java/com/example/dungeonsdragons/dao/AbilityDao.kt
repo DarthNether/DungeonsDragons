@@ -6,7 +6,7 @@ import com.example.dungeonsdragons.entitities.Ability
 @Dao
 interface AbilityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertAbilities(vararg ability: Ability)
+    fun insertAbilities(vararg ability: Ability)
 
     @Update
     fun updateAbilities(vararg ability: Ability)
@@ -15,11 +15,11 @@ interface AbilityDao {
     fun deleteAbilities(vararg ability: Ability)
 
     @Query("SELECT * FROM abilities_table")
-    fun loadAllAbilities(): Array<Ability>
+    fun selectAllAbilities(): Array<Ability>
 
     @Query("SELECT * FROM abilities_table where `index` = :index")
-    fun loadAbilityByIndex(index: Int): Array<Ability>
+    fun selectAbilityByIndex(index: Int): Array<Ability>
 
     @Query("SELECT * FROM abilities_table where name LIKE :name")
-    fun loadAbilityByName(name: String): Array<Ability>
+    fun selectAbilityByName(name: String): Array<Ability>
 }

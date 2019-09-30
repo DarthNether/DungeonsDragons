@@ -6,20 +6,20 @@ import com.example.dungeonsdragons.entitities.Background
 @Dao
 interface BackgroundDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertBackgrounds(vararg background: Background)
+    fun insertBackgrounds(vararg background: Background)
 
     @Update
-    fun UpdateBackgrounds(vararg background: Background)
+    fun updateBackgrounds(vararg background: Background)
 
     @Delete
-    fun DeleteBackgrounds(vararg background: Background)
+    fun deleteBackgrounds(vararg background: Background)
 
     @Query("SELECT * FROM backgrounds_table")
-    fun SelectAllBackgrounds(): Array<Background>
+    fun selectAllBackgrounds(): Array<Background>
 
     @Query("SELECT * FROM backgrounds_table WHERE `index` = :index")
-    fun SelectBackgroundByIndex(index: Int): Array<Background>
+    fun selectBackgroundByIndex(index: Int): Array<Background>
 
     @Query("SELECT * FROM backgrounds_table WHERE name = :name")
-    fun SelectBackgroundByName(name: String): Array<Background>
+    fun selectBackgroundByName(name: String): Array<Background>
 }

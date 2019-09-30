@@ -6,20 +6,20 @@ import com.example.dungeonsdragons.entitities.Class
 @Dao
 interface ClassDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertClasses(vararg clazz: Class)
+    fun insertClasses(vararg clazz: Class)
 
     @Update
-    fun UpdateClasses(vararg clazz: Class)
+    fun updateClasses(vararg clazz: Class)
 
     @Delete
-    fun DeleteClasses(vararg clazz: Class)
+    fun deleteClasses(vararg clazz: Class)
 
     @Query("SELECT * FROM classes_table")
-    fun SelectAllClasses(): Array<Class>
+    fun selectAllClasses(): Array<Class>
 
     @Query("SELECT * FROM classes_table WHERE `index` = :index")
-    fun SelectClassesByIndex(index: Int): Array<Class>
+    fun selectClassesByIndex(index: Int): Array<Class>
 
     @Query("SELECT * FROM classes_table WHERE name LIKE :name")
-    fun SelectClassesByName(name: String): Array<Class>
+    fun selectClassesByName(name: String): Array<Class>
 }

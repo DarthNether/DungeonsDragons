@@ -6,20 +6,20 @@ import com.example.dungeonsdragons.entitities.DamageType
 @Dao
 interface DamageTypeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun InsertDamageTypes(vararg damageType: DamageType)
+    fun insertDamageTypes(vararg damageType: DamageType)
 
     @Update
-    fun UpdateDamageTypes(vararg damageType: DamageType)
+    fun updateDamageTypes(vararg damageType: DamageType)
 
     @Delete
-    fun DeleteDamageTypes(vararg damageType: DamageType)
+    fun deleteDamageTypes(vararg damageType: DamageType)
 
     @Query("SELECT * FROM dmg_types_table")
-    fun SelectAllDamageTypes(): Array<DamageType>
+    fun selectAllDamageTypes(): Array<DamageType>
 
     @Query("SELECT * FROM dmg_types_table WHERE `index` = :index")
-    fun SelectDamageTypeByIndex(index: Int): Array<DamageType>
+    fun selectDamageTypeByIndex(index: Int): Array<DamageType>
 
     @Query("SELECT * FROM dmg_types_table WHERE name LIKE :name")
-    fun SelectDamageTypeByName(name: String): Array<DamageType>
+    fun selectDamageTypeByName(name: String): Array<DamageType>
 }
