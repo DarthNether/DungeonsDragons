@@ -15,11 +15,11 @@ interface AbilityDao {
     fun deleteAbilities(vararg ability: Ability)
 
     @Query("SELECT * FROM abilities_table")
-    fun selectAllAbilities(): Array<Ability>
+    fun loadAllAbilities(): Array<Ability>
 
-    @Query("SELECT * FROM abilities_table where `index` = :index")
-    fun selectAbilityByIndex(index: Int): Array<Ability>
+    @Query("SELECT * FROM abilities_table where id = :id")
+    fun loadAbilityById(id: Int): Array<Ability>
 
     @Query("SELECT * FROM abilities_table where name LIKE :name")
-    fun selectAbilityByName(name: String): Array<Ability>
+    fun loadAbilityByName(name: String): Array<Ability>
 }

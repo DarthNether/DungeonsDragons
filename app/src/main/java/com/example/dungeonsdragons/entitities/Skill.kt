@@ -9,13 +9,13 @@ import androidx.room.PrimaryKey
     tableName = "skills_table",
     foreignKeys = [ForeignKey(
         entity = Ability::class,
-        parentColumns = arrayOf("index"),
-        childColumns = arrayOf("ability_index")
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("ability_id")
     )]
 )
 data class Skill(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "desc") val desc: String,
-    @ColumnInfo(name = "ability_index") val ability: Int
+    @ColumnInfo(name = "ability_id") val ability: Int
 )

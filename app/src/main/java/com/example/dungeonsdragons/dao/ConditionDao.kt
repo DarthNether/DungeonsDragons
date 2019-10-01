@@ -15,11 +15,11 @@ interface ConditionDao {
     fun deleteConditions(vararg conditions: Condition)
 
     @Query("SELECT * FROM conditions_table")
-    fun selectAllConditions(): Array<Condition>
+    fun loadAllConditions(): Array<Condition>
 
-    @Query("SELECT * FROM conditions_table WHERE `index` = :index")
-    fun selectConditionByIndex(index: Int): Array<Condition>
+    @Query("SELECT * FROM conditions_table WHERE id = :id")
+    fun loadConditionById(id: Int): Array<Condition>
 
     @Query("SELECT * FROM conditions_table WHERE name LIKE :name")
-    fun selectConditionByName(name: String): Array<Condition>
+    fun loadConditionByName(name: String): Array<Condition>
 }

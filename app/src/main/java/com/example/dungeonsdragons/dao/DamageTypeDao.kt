@@ -15,11 +15,11 @@ interface DamageTypeDao {
     fun deleteDamageTypes(vararg damageType: DamageType)
 
     @Query("SELECT * FROM dmg_types_table")
-    fun selectAllDamageTypes(): Array<DamageType>
+    fun loadAllDamageTypes(): Array<DamageType>
 
-    @Query("SELECT * FROM dmg_types_table WHERE `index` = :index")
-    fun selectDamageTypeByIndex(index: Int): Array<DamageType>
+    @Query("SELECT * FROM dmg_types_table WHERE id = :id")
+    fun loadDamageTypeById(id: Int): Array<DamageType>
 
     @Query("SELECT * FROM dmg_types_table WHERE name LIKE :name")
-    fun selectDamageTypeByName(name: String): Array<DamageType>
+    fun loadDamageTypeByName(name: String): Array<DamageType>
 }

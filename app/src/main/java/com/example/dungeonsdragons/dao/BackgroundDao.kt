@@ -15,11 +15,11 @@ interface BackgroundDao {
     fun deleteBackgrounds(vararg background: Background)
 
     @Query("SELECT * FROM backgrounds_table")
-    fun selectAllBackgrounds(): Array<Background>
+    fun loadAllBackgrounds(): Array<Background>
 
-    @Query("SELECT * FROM backgrounds_table WHERE `index` = :index")
-    fun selectBackgroundByIndex(index: Int): Array<Background>
+    @Query("SELECT * FROM backgrounds_table WHERE id = :id")
+    fun loadBackgroundById(id: Int): Array<Background>
 
     @Query("SELECT * FROM backgrounds_table WHERE name = :name")
-    fun selectBackgroundByName(name: String): Array<Background>
+    fun loadBackgroundByName(name: String): Array<Background>
 }

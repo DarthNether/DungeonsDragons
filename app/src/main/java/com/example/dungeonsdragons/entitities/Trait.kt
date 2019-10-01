@@ -10,18 +10,18 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(
             entity = Race::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("race")
         ),
         ForeignKey(
             entity = Subrace::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("subrace")
         )
     ]
 )
 data class Trait(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "desc") val desc: String,
     @ColumnInfo(name = "race") val race: Int,

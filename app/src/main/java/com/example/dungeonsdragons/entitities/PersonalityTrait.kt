@@ -10,13 +10,13 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(
             entity = Background::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("background")
         )
     ]
 )
 data class PersonalityTrait(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "trait") val trait: String,
     @ColumnInfo(name = "background") val background: Int
 )

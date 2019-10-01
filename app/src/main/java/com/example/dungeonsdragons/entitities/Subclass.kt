@@ -10,13 +10,13 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(
             entity = Class::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("clazz")
         )
     ]
 )
 data class Subclass(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "class") val clazz: Int,
     @ColumnInfo(name = "desc") val desc: String

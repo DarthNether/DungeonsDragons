@@ -15,11 +15,11 @@ interface ClassDao {
     fun deleteClasses(vararg clazz: Class)
 
     @Query("SELECT * FROM classes_table")
-    fun selectAllClasses(): Array<Class>
+    fun loadAllClasses(): Array<Class>
 
-    @Query("SELECT * FROM classes_table WHERE `index` = :index")
-    fun selectClassesByIndex(index: Int): Array<Class>
+    @Query("SELECT * FROM classes_table WHERE id = :id")
+    fun loadClassesById(id: Int): Array<Class>
 
     @Query("SELECT * FROM classes_table WHERE name LIKE :name")
-    fun selectClassesByName(name: String): Array<Class>
+    fun loadClassesByName(name: String): Array<Class>
 }

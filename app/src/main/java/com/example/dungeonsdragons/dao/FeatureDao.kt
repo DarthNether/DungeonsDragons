@@ -15,17 +15,17 @@ interface FeatureDao {
     fun deleteFeatures(vararg feature: Feature)
 
     @Query("SELECT * FROM features_table")
-    fun selectAllFeatures(): Array<Feature>
+    fun loadAllFeatures(): Array<Feature>
 
-    @Query("SELECT * FROM features_table WHERE `index` = :index")
-    fun selectFeaturesByIndex(index: Int): Array<Feature>
+    @Query("SELECT * FROM features_table WHERE id = :id")
+    fun loadFeaturesById(id: Int): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE name LIKE :name")
-    fun selectFeaturseByName(name: String): Array<Feature>
+    fun loadFeaturesByName(name: String): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE class = :clazz")
-    fun selectFeaturesByClass(clazz: Int)
+    fun loadFeaturesByClass(clazz: Int)
 
     @Query("SELECT * FROM features_table WHERE subclass = :subclass")
-    fun selectFeaturesBySubClass(subclass: Int)
+    fun loadFeaturesBySubClass(subclass: Int)
 }

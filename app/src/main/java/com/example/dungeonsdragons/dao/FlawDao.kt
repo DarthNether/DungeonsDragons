@@ -15,5 +15,5 @@ interface FlawDao {
     fun deleteFlaws(vararg flaw: Flaw)
 
     @Query("SELECT * FROM flaws_table WHERE background LIKE :background")
-    fun selectFlaws(background: Int): Array<Flaw>
+    fun loadFlaws(background: Int): Array<Flaw>
 }

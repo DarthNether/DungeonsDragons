@@ -14,5 +14,5 @@ interface BondDao {
     fun deleteBonds(vararg bond: Bond)
 
     @Query("SELECT * FROM bonds_table WHERE background = :background")
-    fun selectBonds(background: Int): Array<Bond>
+    fun loadBonds(background: Int): Array<Bond>
 }

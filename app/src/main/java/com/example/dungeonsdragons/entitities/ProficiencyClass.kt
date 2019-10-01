@@ -10,18 +10,18 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(
             entity = Proficiency::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("proficiency")
         ),
         ForeignKey(
             entity = Class::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("class")
         )
     ]
 )
 data class ProficiencyClass(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "proficiency") val proficiency: Int,
     @ColumnInfo(name = "class") val clazz: Int
 )

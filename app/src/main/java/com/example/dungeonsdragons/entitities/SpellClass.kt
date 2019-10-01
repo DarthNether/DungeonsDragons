@@ -10,18 +10,18 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(
             entity = Spell::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("spell")
         ),
         ForeignKey(
             entity = Class::class,
-            parentColumns = arrayOf("index"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("clazz")
         )
     ]
 )
 data class SpellClass(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "spell") val spell: Int,
     @ColumnInfo(name = "class") val clazz: Int
 )

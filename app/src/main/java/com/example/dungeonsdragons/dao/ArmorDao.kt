@@ -16,14 +16,14 @@ interface ArmorDao {
     fun deleteArmors(vararg armor: Armor)
 
     @Query("SELECT * FROM armors_table")
-    fun selectAllArmors(): Array<Armor>
+    fun loadAllArmors(): Array<Armor>
 
-    @Query("SELECT * FROM armors_table WHERE `index` = :index")
-    fun selectArmorsByIndex(index: Int): Array<Armor>
+    @Query("SELECT * FROM armors_table WHERE id = :id")
+    fun loadArmorsById(id: Int): Array<Armor>
 
     @Query("SELECT * FROM armors_table WHERE type LIKE :type")
-    fun selectArmorsByType(type: String): Array<Armor>
+    fun loadArmorsByType(type: String): Array<Armor>
 
     @Query("SELECT * FROM armors_table WHERE name LIKE :name")
-    fun selectArmorsByName(name: String): Array<Armor>
+    fun loadArmorsByName(name: String): Array<Armor>
 }
