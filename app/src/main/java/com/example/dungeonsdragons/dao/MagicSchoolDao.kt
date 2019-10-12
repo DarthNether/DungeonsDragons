@@ -6,7 +6,7 @@ import com.example.dungeonsdragons.entitities.MagicSchool
 @Dao
 interface MagicSchoolDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertMagicShools(vararg magicSchool: MagicSchool)
+    fun insertMagicSchools(vararg magicSchool: MagicSchool)
 
     @Update
     fun updateMagicSchools(vararg magicSchool: MagicSchool)
