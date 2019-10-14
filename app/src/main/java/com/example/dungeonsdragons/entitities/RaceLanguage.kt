@@ -20,7 +20,7 @@ import androidx.room.PrimaryKey
         )
     ]
 )
-data class RacesLanguages(
+data class RaceLanguage(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "race") val race: Int,
     @ColumnInfo(name = "language") val language: Int
