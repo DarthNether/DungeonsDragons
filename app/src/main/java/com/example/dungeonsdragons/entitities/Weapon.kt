@@ -16,7 +16,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class Weapon(
-    @PrimaryKey(autoGenerate = true) val index: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "type") val type: String,
     @ColumnInfo(name = "weapon_range") val range: String,
