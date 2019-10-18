@@ -19,6 +19,7 @@ data class Weapon(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "rarity") val rarity: String,
     @ColumnInfo(name = "weapon_range") val range: String,
     @ColumnInfo(name = "weapon_category") val category: String,
     @ColumnInfo(name = "cost_value") val cost_value: Int,
