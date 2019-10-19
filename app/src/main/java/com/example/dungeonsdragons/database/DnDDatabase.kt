@@ -9,7 +9,7 @@ import com.example.dungeonsdragons.entitities.*
 
 @Database(
     entities = [Ability::class, Armor::class, Background::class, Bond::class, Class::class,
-        Condition::class, DamageType::class, Feature::class, Flaw::class, Ideal::class,
+        Condition::class, DamageType::class, Equipment::class, Feature::class, Flaw::class, Ideal::class,
         Language::class, Level::class, MagicSchool::class, PersonalityTrait::class,
         Proficiency::class, ProficiencyBackground::class, ProficiencyClass::class,
         ProficiencyRace::class, Race::class, RaceLanguage::class, Skill::class, Spell::class,
@@ -26,6 +26,7 @@ abstract class DnDDatabase : RoomDatabase() {
     abstract fun classDao(): ClassDao
     abstract fun conditionDao(): ConditionDao
     abstract fun damageTypeDao(): DamageTypeDao
+    abstract fun equipmentDao(): EquipmentDao
     abstract fun featureDao(): FeatureDao
     abstract fun flawDao(): FlawDao
     abstract fun idealDao(): IdealDao
