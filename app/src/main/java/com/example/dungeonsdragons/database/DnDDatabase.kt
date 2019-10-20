@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.dungeonsdragons.dao.*
 import com.example.dungeonsdragons.entitities.*
+import com.example.dungeonsdragons.utilities.ioThread
 
 @Database(
     entities = [Ability::class, Armor::class, Background::class, Bond::class, Class::class,
@@ -53,23 +55,25 @@ abstract class DnDDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: DnDDatabase? = null
 
-        fun getDatabase(context: Context): DnDDatabase {
-            val tempInstance = INSTANCE
-            if (tempInstance != null) {
-                return tempInstance
+        fun getInstance(context: Context): DnDDatabase =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
             }
 
-            synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    DnDDatabase::class.java,
-                    "dnd_database"
-                ).build()
-
-                INSTANCE = instance
-                return instance
-            }
-        }
+        private fun buildDatabase(context: Context) =
+            Room.databaseBuilder(
+                context.applicationContext,
+                DnDDatabase::class.java, "DnD Database"
+            )
+                .addCallback(object : Callback() {
+                    override fun onCreate(db: SupportSQLiteDatabase) {
+                        super.onCreate(db)
+                        //insert the data on the IO Thread
+                        ioThread {
+                            getInstance(context)
+                        }
+                    }
+                }).build()
     }
 
 }
