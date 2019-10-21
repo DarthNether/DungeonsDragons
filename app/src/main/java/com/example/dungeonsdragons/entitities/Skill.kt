@@ -16,6 +16,5 @@ import androidx.room.PrimaryKey
 data class Skill(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "desc") val desc: String,
     @ColumnInfo(name = "ability_id") val ability: Int
 )

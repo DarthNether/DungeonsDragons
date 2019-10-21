@@ -69,8 +69,22 @@ abstract class DnDDatabase : RoomDatabase() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
                         //insert the data on the IO Thread
+                        //insert abilities
                         ioThread {
-                            getInstance(context)
+                            getInstance(context).abilityDao()
+                                .insertAbilities(*PREPOPULATE_ABILITIES)
+                        }
+
+                        //insert skills
+                        ioThread {
+                            getInstance(context).skillDao()
+                                .insertSkills(*PREPOPULATE_SKILLS)
+                        }
+
+                        //insert races
+                        ioThread {
+                            getInstance(context).raceDao()
+                                .insertRaces(*PREPOPULATE_RACES)
                         }
                     }
                 }).build()
