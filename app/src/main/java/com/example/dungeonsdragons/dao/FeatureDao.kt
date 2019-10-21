@@ -24,8 +24,8 @@ interface FeatureDao {
     fun loadFeaturesByName(name: String): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE class = :clazz")
-    fun loadFeaturesByClass(clazz: Int)
+    fun loadFeaturesByClass(clazz: Int): Array<Feature>
 
     @Query("SELECT * FROM features_table WHERE subclass = :subclass")
-    fun loadFeaturesBySubClass(subclass: Int)
+    fun loadFeaturesBySubClass(subclass: Int): Array<Feature>
 }

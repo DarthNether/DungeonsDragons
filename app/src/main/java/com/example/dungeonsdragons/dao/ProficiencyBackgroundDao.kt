@@ -22,7 +22,7 @@ interface ProficiencyBackgroundDao {
 
     @Query(
         """SELECT * FROM backgrounds_table 
-            INNER JOIN proficiencies_backgrounds_table ON proficiencies_backgrounds_table.backgrounds_table.id = background 
+            INNER JOIN proficiencies_backgrounds_table ON proficiencies_backgrounds_table.id = backgrounds_table.id 
             WHERE proficiencies_backgrounds_table.proficiency = :proficiency"""
     )
     fun loadBackgroundsFromProficiency(proficiency: Int): Array<Background>

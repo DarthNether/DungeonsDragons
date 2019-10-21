@@ -23,6 +23,6 @@ interface SpellDao {
     @Query(" SELECT * FROM spells_table WHERE name LIKE :name ")
     fun loadSpellsByName(name: String): Array<Spell>
 
-    @Query(" SELECT * FROM spells_table WHERE magic_school_id LIKE  :magic_school")
+    @Query(" SELECT * FROM spells_table WHERE magic_school LIKE  :magic_school")
     fun loadSpellsByMagicSchool(magic_school: Int): Array<Spell>
 }

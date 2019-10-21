@@ -3,6 +3,7 @@ package com.example.dungeonsdragons.dao
 import androidx.room.*
 import com.example.dungeonsdragons.entitities.Bond
 
+@Dao
 interface BondDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertBonds(vararg bonds: Bond)

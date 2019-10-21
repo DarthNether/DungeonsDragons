@@ -1,7 +1,6 @@
 package com.example.dungeonsdragons.dao
 
 import androidx.room.*
-import com.example.dungeonsdragons.entitities.Class
 import com.example.dungeonsdragons.entitities.Subclass
 
 @Dao
@@ -25,5 +24,5 @@ interface SubclassDao {
     fun loadSubclassByName(name: String): Array<Subclass>
 
     @Query("SELECT * FROM subclasses_table WHERE class like :clazz")
-    fun loadSubclassesByClass(clazz: Class)
+    fun loadSubclassesByClass(clazz: Int): Array<Subclass>
 }

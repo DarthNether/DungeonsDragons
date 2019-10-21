@@ -17,7 +17,7 @@ import androidx.room.PrimaryKey
 data class Spell(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "magic_school_id") val magic_school: Int,
+    @ColumnInfo(name = "magic_school") val magic_school: Int,
     @ColumnInfo(name = "range") val range: Int,
     @ColumnInfo(name = "casting_time") val time: String,
     @ColumnInfo(name = "duration") val duration: String,

@@ -52,6 +52,7 @@ abstract class DnDDatabase : RoomDatabase() {
     abstract fun weaponDaO(): WeaponDao
 
     companion object {
+
         @Volatile
         private var INSTANCE: DnDDatabase? = null
 
