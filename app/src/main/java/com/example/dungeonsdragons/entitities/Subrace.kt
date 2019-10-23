@@ -14,7 +14,7 @@ import androidx.room.PrimaryKey
     )]
 )
 data class Subrace(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "race") val race: Int,
     @ColumnInfo(name = "desc") val desc: String,

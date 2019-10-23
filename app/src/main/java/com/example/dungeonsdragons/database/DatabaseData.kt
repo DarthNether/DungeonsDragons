@@ -1,8 +1,6 @@
 package com.example.dungeonsdragons.database
 
-import com.example.dungeonsdragons.entitities.Ability
-import com.example.dungeonsdragons.entitities.Race
-import com.example.dungeonsdragons.entitities.Skill
+import com.example.dungeonsdragons.entitities.*
 
 /**
  * Abilities to fill database's table "abilities_table"
@@ -192,5 +190,49 @@ val PREPOPULATE_RACES = arrayOf(
         size = "Mediano",
         size_desc = "Los tieflings son aproximadamente de la misma altura y constitución que los " +
                 "humanos."
+    )
+)
+
+/**
+ * Classes to fill database's table "classes_table"
+ */
+val PREPOPULATE_CLASSES = arrayOf(
+    Class(
+        1,
+        "Bardo",
+        8
+    ),
+    Class(
+        2,
+        "Brujo",
+        8
+    ),
+    Class(
+        12,
+        "Cazador de Brujas",
+        8
+    )
+)
+
+/**
+ * Subraces to fill database's table "subraces_table"
+ */
+val PREPOPULATE_SUBRACES = arrayOf(
+    Subrace(
+        0,
+        "Enano de las Colinas",
+        0,
+        "Como enano de las colinas, posees sentidos agudos, una profunda intuición y una " +
+                "resistencia extraordinaria.",
+        wis_bonus = 1
+    ),
+    Subrace(
+        1,
+        "Enano de las Montañas",
+        0,
+        "Como enano de las montañas, eres fuerte y robusto, acostumbrado a la difícil vida " +
+                "en un terreno agreste. Probablemente seas alto (para ser enano) y tiendas a tonos " +
+                "de piel más claros",
+        str_bonus = 2
     )
 )
