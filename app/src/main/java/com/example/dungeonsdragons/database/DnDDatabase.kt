@@ -63,6 +63,11 @@ abstract class DnDDatabase : RoomDatabase() {
                             getInstance(context).classDao()
                                 .insertClasses(*PREPOPULATE_CLASSES)
                         }
+
+                        ioThread {
+                            getInstance(context).subraceDao()
+                                .insertSubraces(*PREPOPULATE_SUBRACES)
+                        }
                     }
                 }).build()
     }

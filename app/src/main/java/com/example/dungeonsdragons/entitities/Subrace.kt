@@ -23,5 +23,6 @@ data class Subrace(
     @ColumnInfo(name = "con_bonus") val cons_bonus: Int = 0,
     @ColumnInfo(name = "int_bonus") val int_bonus: Int = 0,
     @ColumnInfo(name = "wis_bonus") val wis_bonus: Int = 0,
-    @ColumnInfo(name = "cha_bonus") val cha_bonus: Int = 0
+    @ColumnInfo(name = "cha_bonus") val cha_bonus: Int = 0,
+    @ColumnInfo(name = "speed_bonus") val speed_bonus: Int = 0
 )

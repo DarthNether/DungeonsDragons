@@ -234,5 +234,33 @@ val PREPOPULATE_SUBRACES = arrayOf(
                 "en un terreno agreste. Probablemente seas alto (para ser enano) y tiendas a tonos " +
                 "de piel más claros",
         str_bonus = 2
+    ),
+    Subrace(
+        2,
+        "Alto Elfo",
+        1,
+        "Como alto elfo, posees una mente aguda y un dominio de, como mínimo, los rudimentos " +
+                "de la magia.",
+        int_bonus = 1
+    ),
+    Subrace(
+        3,
+        "Elfo de los Bosques",
+        1,
+        "Como elfo de los bosques, posees sentidos agudos y una buena intuición. Además, tus " +
+                "velosces pies te permiten desplazarte rápida y sigilosamente a traves de los bosques " +
+                "que son tu hogar.",
+        wis_bonus = 1,
+        speed_bonus = 5
+    ),
+    Subrace(
+        4,
+        "Elfo Oscuro (Drow)",
+        1,
+        "Descendientes de una subraza de elfos más antigua, los drows fueron expulsados del " +
+                "mundo de la superficie por seguir a la diosa Lolth en la senda del mal. Han " +
+                "construido su propia civilización en las profundidades del underdark tomando como " +
+                "modelo el camino de Lolth.",
+        cha_bonus = 1
     )
 )
