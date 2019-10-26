@@ -177,7 +177,7 @@ val PREPOPULATE_RACES = arrayOf(
                 "son esbeltos."
     ),
     Race(
-        id = 8,
+        id = 2,
         name = "Tiefling",
         speed = 30,
         cha_bonus = 2,
@@ -198,17 +198,12 @@ val PREPOPULATE_RACES = arrayOf(
  */
 val PREPOPULATE_CLASSES = arrayOf(
     Class(
-        1,
-        "Bardo",
-        8
-    ),
-    Class(
-        2,
+        0,
         "Brujo",
         8
     ),
     Class(
-        12,
+        1,
         "Cazador de Brujas",
         8
     )
@@ -262,5 +257,55 @@ val PREPOPULATE_SUBRACES = arrayOf(
                 "construido su propia civilización en las profundidades del underdark tomando como " +
                 "modelo el camino de Lolth.",
         cha_bonus = 1
+    )
+)
+
+/**
+ *
+ */
+val PREPOPULATE_SUBCLASSES = arrayOf(
+    Subclass(
+        0,
+        "El Infernal",
+        0,
+        "Has cerrado un trato con un infernal de los Planos Inferiores; un ser de fines " +
+                "malvados, a los que incluso tú mismo podrías oponerte. Este tipo de seres desean " +
+                "la corrupción y destrucción de todas  las cosas, lo que, en última instancia, " +
+                "también te incluye."
+    ),
+    Subclass(
+        1,
+        "El Primigenio",
+        0,
+        "Tu patrón es una misteriosa entidad cuya naturaleza es ajena al tejido de la " +
+                "realidad. Puede que provenga del Reino Lejano, un espacio más allá de la realidad, " +
+                "o quizá se trate de uno de los dioses antiguos  que solo se recuerdan a través " +
+                "de leyendas. Sus motivos son incomprensibles para los mortales y su conocimiento " +
+                "es tan inmenso y antiguo que incluso las bibliotecas más grandes palidecen en " +
+                "comparación con los vastos secretos que este ser cobija."
+
+    ),
+    Subclass(
+        2,
+        "El Señor Feérico",
+        0,
+        "Tu patrón es un señor o señora feérico: una criatura de leyenda que atesora secretos " +
+                "que ya habían sido olvidados antes de que las razas mortales vieran la luz. Las " +
+                "motivaciones de una entidad como esta suelen ser incognoscibles y a veces parecen " +
+                "caprichosas, pues lo mismo pueden aspirar a aumentar su poder mágico como buscar " +
+                "vengarse de un agravio ancestral."
+    ),
+    Subclass(
+        3,
+        "Orden del Asesino de Fantasmas",
+        1,
+        "La Orden del Asesino de Fantasmas es la más antigua y la más ‘pura’ de las órdenes, " +
+                "teniendo sus raíces en prácticas divinas y creadas especíﬁ camente para limpiar " +
+                "los reinos del azote de la no muerte. Los Asesinos de Fantasmas buscan y estudian " +
+                "el momento de la muerte, obsesionándose con el misterio de la transición. Algunos " +
+                "permanecerán sentados junto a los enfermos terminales para ser testigos cercanos " +
+                "de su fallecimiento, mientras otros irán tan lejos como para tener deliberadamente " +
+                "experiencias cercanas a la muerte, permitiéndoles aﬁ nar sus sentidos a los reinos " +
+                "etéreos del más allá."
     )
 )

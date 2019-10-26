@@ -40,33 +40,52 @@ abstract class DnDDatabase : RoomDatabase() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
                         //insert the data on the IO Thread
-                        //insert abilities
+                        /**
+                         * insert abilities
+                         */
                         ioThread {
                             getInstance(context).abilityDao()
                                 .insertAbilities(*PREPOPULATE_ABILITIES)
                         }
 
-                        //insert skills
+                        /**
+                         * insert skills
+                         */
                         ioThread {
                             getInstance(context).skillDao()
                                 .insertSkills(*PREPOPULATE_SKILLS)
                         }
 
-                        //insert races
+                        /**
+                         * insert races
+                         */
                         ioThread {
                             getInstance(context).raceDao()
                                 .insertRaces(*PREPOPULATE_RACES)
                         }
 
-                        //insert classes
+                        /**
+                         * insert classes
+                         */
                         ioThread {
                             getInstance(context).classDao()
                                 .insertClasses(*PREPOPULATE_CLASSES)
                         }
 
+                        /**
+                         * insert subraces
+                         */
                         ioThread {
                             getInstance(context).subraceDao()
                                 .insertSubraces(*PREPOPULATE_SUBRACES)
+                        }
+
+                        /**
+                         * insert subclasses
+                         */
+                        ioThread {
+                            getInstance(context).subclassDao()
+                                .insertSubclasses(*PREPOPULATE_SUBCLASSES)
                         }
                     }
                 }).build()
