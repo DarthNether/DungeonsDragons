@@ -16,7 +16,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class Subclass(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "class") val clazz: Int,
     @ColumnInfo(name = "desc") val desc: String

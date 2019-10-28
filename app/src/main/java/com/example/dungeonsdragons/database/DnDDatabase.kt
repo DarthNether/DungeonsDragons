@@ -16,7 +16,7 @@ import com.example.dungeonsdragons.utilities.ioThread
         Proficiency::class, ProficiencyBackground::class, ProficiencyClass::class,
         ProficiencyRace::class, Race::class, RaceLanguage::class, Skill::class, Spell::class,
         SpellClass::class, SpellRace::class, Subclass::class, Subrace::class, Trait::class,
-        Weapon::class],
+        TraitRace::class, TraitSubrace::class, Weapon::class],
     version = 1
 )
 abstract class DnDDatabase : RoomDatabase() {
@@ -87,6 +87,30 @@ abstract class DnDDatabase : RoomDatabase() {
                             getInstance(context).subclassDao()
                                 .insertSubclasses(*PREPOPULATE_SUBCLASSES)
                         }
+
+                        /**
+                         * insert traits
+                         */
+                        ioThread {
+                            getInstance(context).traitDao()
+                                .insertTraits(*PREPOPULATE_TRAITS)
+                        }
+
+                        /**
+                         * insert traits - races
+                         */
+                        ioThread {
+                            getInstance(context).traitRaceDao()
+                                .insertTraitRace(*PREPOPULATE_TRAITS_RACES)
+                        }
+
+                        /**
+                         * insert traits - subraces
+                         */
+                        ioThread {
+                            getInstance(context).traitSubraceDao()
+                                .insertTraitSubrace(*PREPOPULATE_TRAITS_SUBRACES)
+                        }
                     }
                 }).build()
     }
@@ -112,7 +136,7 @@ abstract class DnDDatabase : RoomDatabase() {
     abstract fun proficiencyRaceDao(): ProficiencyRaceDao
     abstract fun proficiencyDao(): ProficiencyDao
     abstract fun raceDao(): RaceDao
-    abstract fun racesLanguagesDao(): RacesLanguagesDao
+    abstract fun racesLanguagesDao(): RaceLanguageDao
     abstract fun skillDao(): SkillDao
     abstract fun spellClassDao(): SpellClassDao
     abstract fun spellDao(): SpellDao
@@ -120,5 +144,7 @@ abstract class DnDDatabase : RoomDatabase() {
     abstract fun subclassDao(): SubclassDao
     abstract fun subraceDao(): SubraceDao
     abstract fun traitDao(): TraitDao
+    abstract fun traitRaceDao(): TraitRaceDao
+    abstract fun traitSubraceDao(): TraitSubraceDao
     abstract fun weaponDaO(): WeaponDao
 }

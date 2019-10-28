@@ -3,7 +3,7 @@ package com.example.dungeonsdragons.database
 import com.example.dungeonsdragons.entitities.*
 
 /**
- * Abilities to fill database's table "abilities_table"
+ * Abilities
  */
 val PREPOPULATE_ABILITIES = arrayOf(
     Ability(
@@ -45,7 +45,7 @@ val PREPOPULATE_ABILITIES = arrayOf(
 )
 
 /**
- * Skills to fill database's table "skills_table"
+ * Skills
  */
 val PREPOPULATE_SKILLS = arrayOf(
     Skill(
@@ -141,7 +141,7 @@ val PREPOPULATE_SKILLS = arrayOf(
 )
 
 /**
- * Races to fill database's table "races_table"
+ * Races
  */
 val PREPOPULATE_RACES = arrayOf(
     Race(
@@ -194,7 +194,7 @@ val PREPOPULATE_RACES = arrayOf(
 )
 
 /**
- * Classes to fill database's table "classes_table"
+ * Classes
  */
 val PREPOPULATE_CLASSES = arrayOf(
     Class(
@@ -210,7 +210,7 @@ val PREPOPULATE_CLASSES = arrayOf(
 )
 
 /**
- * Subraces to fill database's table "subraces_table"
+ * Subraces
  */
 val PREPOPULATE_SUBRACES = arrayOf(
     Subrace(
@@ -228,7 +228,8 @@ val PREPOPULATE_SUBRACES = arrayOf(
         "Como enano de las montañas, eres fuerte y robusto, acostumbrado a la difícil vida " +
                 "en un terreno agreste. Probablemente seas alto (para ser enano) y tiendas a tonos " +
                 "de piel más claros",
-        str_bonus = 2
+        str_bonus = 2,
+        hp_bonus = 1
     ),
     Subrace(
         2,
@@ -261,7 +262,7 @@ val PREPOPULATE_SUBRACES = arrayOf(
 )
 
 /**
- *
+ * Subclasses
  */
 val PREPOPULATE_SUBCLASSES = arrayOf(
     Subclass(
@@ -307,5 +308,131 @@ val PREPOPULATE_SUBCLASSES = arrayOf(
                 "de su fallecimiento, mientras otros irán tan lejos como para tener deliberadamente " +
                 "experiencias cercanas a la muerte, permitiéndoles aﬁ nar sus sentidos a los reinos " +
                 "etéreos del más allá."
+    )
+)
+
+/**
+ * Traits
+ */
+val PREPOPULATE_TRAITS = arrayOf(
+    Trait(
+        0,
+        "Visión en la Oscuridad",
+        "Eres capaz de percibir luz tenue hasta a 60 pies como si hubiera luz brillante, y esa " +
+                "misma distancia en la oscuridad como si fuera luz tenue. Eso sí, no puedes distinguir " +
+                "colores en la oscuridad, solo tonos de gris."
+    ),
+    Trait(
+        1,
+        "Resistencia Enana",
+        "Tienes ventaja en las tiradas de salvación contra veneno y posees resistencia al " +
+                "daño de veneno."
+    ),
+    Trait(
+        2,
+        "Entrenamiento de Combate Enano",
+        "Eres competente con hachas de guerra, hachas de mano, martillos de guerra y martillos " +
+                "ligeros."
+    ),
+    Trait(
+        3,
+        "Competencia con Herramientas",
+        "Eres competente con las herramientas de artesano que elijas de entre las siguientes: " +
+                "herramientas de albañil, herramientas de herrero o suministros de cervecero."
+    ),
+    Trait(
+        4,
+        "Afinidad con la Piedra",
+        "Cuando hagas una prueba de Inteligencia (Historia) que tenga relación con el origen " +
+                "de un trabajo en piedra, se te considerará competente en la habilidad Historia y " +
+                "añadirás dos veces tu bonificador por competencia a la tirada, en lugar de solo una."
+    ),
+    Trait(
+        5,
+        "Aguante Enano",
+        "Tus puntos de golpe máximos se incrementan en 1, y aumentarán en 1 más cada vez que " +
+                "subas un nivel."
+    ),
+    Trait(
+        6,
+        "Entrenamiento con Armadura Enana",
+        "Eres competente con armaduras ligeras y medias."
+    ),
+    Trait(
+        7,
+        "Resistencia Infernal",
+        "Posees resistencia al daño de fuego."
+    ),
+    Trait(
+        8,
+        "Linaje Infernal",
+        "Conoces el truco Taumaturgia. Cuando llegas a nivel 3, puedes lanzar el truco " +
+                "Reprensión Infernal como conjuro de nivel 2 una vez usando este atributo y recuperas " +
+                "la capacidad para hacerlo tras realizar un descanso largo. Cuando alcanzas el nivel " +
+                "5, eres capaz de lanzar el conjuro Oscuridad una vez empleando este atributo y " +
+                "recuperas la capacidad para hacerlo tras realizar un descanso largo. El Carisma " +
+                "es tu aptitud mágica para estos conjuros."
+    )
+)
+
+/**
+ * Traits - Races
+ */
+val PREPOPULATE_TRAITS_RACES = arrayOf(
+    TraitRace(
+        0,
+        0,
+        0
+    ),
+    TraitRace(
+        0,
+        0,
+        1
+    ),
+    TraitRace(
+        0,
+        0,
+        2
+    ),
+    TraitRace(
+        0,
+        0,
+        3
+    ),
+    TraitRace(
+        0,
+        0,
+        4
+    ),
+    TraitRace(
+        0,
+        2,
+        0
+    ),
+    TraitRace(
+        0,
+        2,
+        7
+    ),
+    TraitRace(
+        0,
+        2,
+        8
+    )
+)
+
+/**
+ * Traits - Subraces
+ */
+val PREPOPULATE_TRAITS_SUBRACES = arrayOf(
+    TraitSubrace(
+        0,
+        0,
+        5
+    ),
+    TraitSubrace(
+        0,
+        1,
+        6
     )
 )

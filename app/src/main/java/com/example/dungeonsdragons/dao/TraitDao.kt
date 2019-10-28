@@ -22,10 +22,4 @@ interface TraitDao {
 
     @Query("SELECT * FROM traits_table WHERE name LIKE :name")
     fun loadTraitByName(name: String): Array<Trait>
-
-    @Query("SELECT * FROM traits_table WHERE subrace LIKE :subrace")
-    fun loadTraitsBySubrace(subrace: Int): Array<Trait>
-
-    @Query("SELECT * FROM traits_table WHERE race LIKE :race")
-    fun loadTraitsByRace(race: Int): Array<Trait>
 }

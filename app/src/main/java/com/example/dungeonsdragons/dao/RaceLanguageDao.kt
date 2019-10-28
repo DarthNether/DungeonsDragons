@@ -9,7 +9,7 @@ import com.example.dungeonsdragons.entitities.Race
 import com.example.dungeonsdragons.entitities.RaceLanguage
 
 @Dao
-interface RacesLanguagesDao {
+interface RaceLanguageDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertRaceLanguage(vararg raceLanguage: RaceLanguage)
 
