@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">DungeonsDragons</string>
+    <string name="app_name">DnD Grimoire</string>
+    <string name="title_activity_splash_screen">Grimoire</string>
+    <string name="email">jvfronton@gmail.com</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
