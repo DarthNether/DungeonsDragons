@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/fragment_characters">
 
 
+    <fragment
+        android:id="@+id/fragment_characters"
+        android:name="com.example.dungeonsdragons.views.ui.characters.fragment_characters"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" />
 </navigation>
