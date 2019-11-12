@@ -11,4 +11,19 @@
         android:name="com.example.dungeonsdragons.views.ui.characters.fragment_characters"
         android:label="fragment_characters"
         tools:layout="@layout/fragment_characters" />
+    <fragment
+        android:id="@+id/fragment_classes"
+        android:name="com.example.dungeonsdragons.views.ui.classes.FragmentClasses"
+        android:label="fragment_classes"
+        tools:layout="@layout/fragment_classes" />
+    <fragment
+        android:id="@+id/fragment_races"
+        android:name="com.example.dungeonsdragons.views.ui.races.FragmentRaces"
+        android:label="fragment_races"
+        tools:layout="@layout/fragment_races" />
+    <fragment
+        android:id="@+id/fragment_spells"
+        android:name="com.example.dungeonsdragons.views.ui.spells.FragmentSpells"
+        android:label="fragment_spells"
+        tools:layout="@layout/fragment_spells" />
 </navigation>
