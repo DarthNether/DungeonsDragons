@@ -15,7 +15,7 @@ interface ClassDao {
     fun deleteClasses(vararg clazz: Class)
 
     @Query("SELECT * FROM classes_table")
-    fun loadAllClasses(): Array<Class>
+    suspend fun loadAllClasses(): Array<Class>
 
     @Query("SELECT * FROM classes_table WHERE id = :id")
     fun loadClassesById(id: Int): Array<Class>

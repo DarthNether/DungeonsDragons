@@ -8,16 +8,16 @@ import com.example.dungeonsdragons.R
 import com.example.dungeonsdragons.entitities.Class
 import kotlinx.android.synthetic.main.item_class.view.*
 
-class ClassesAdapter(private val ClassesDataset: Array<Class>) :
+class ClassesAdapter :
     RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() {
-
+    var classes: Array<Class> = arrayOf()
     class ClassesViewHolder(item: View) : RecyclerView.ViewHolder(item)
 
-    override fun getItemCount(): Int = ClassesDataset.size
+    override fun getItemCount(): Int = classes.size
 
     override fun onBindViewHolder(holder: ClassesViewHolder, position: Int) =
         with(holder.itemView) {
-            ClassesDataset[position].let {
+            classes[position].let {
                 txtClass.text = it.name
             }
         }
