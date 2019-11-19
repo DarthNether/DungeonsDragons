@@ -5,24 +5,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_characters"
+            android:id="@+id/fragment_characters"
             android:icon="@drawable/ic_characters"
             android:title="@string/menu_characters" />
     </group>
 
     <group>
         <item
-            android:id="@+id/nav_spells"
+            android:id="@+id/fragment_spells"
             android:icon="@drawable/ic_spells"
             android:title="@string/menu_spells" />
 
         <item
-            android:id="@+id/nav_classes"
+            android:id="@+id/fragment_classes"
             android:icon="@drawable/ic_classes"
             android:title="@string/menu_classes" />
 
         <item
-            android:id="@+id/nav_races"
+            android:id="@+id/fragment_races"
             android:icon="@drawable/ic_races"
             android:title="@string/menu_races" />
     </group>

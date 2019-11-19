@@ -2,18 +2,16 @@ package com.example.dungeonsdragons.views
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.dungeonsdragons.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
@@ -43,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.fragment_races
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -51,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
