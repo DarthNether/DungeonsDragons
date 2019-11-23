@@ -1,4 +1,4 @@
-package com.example.dungeonsdragons
+package com.example.dungeonsdragons.utilities
 
 import android.content.Context
 import com.example.dungeonsdragons.database.DnDDatabase

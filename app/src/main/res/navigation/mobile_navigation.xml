@@ -15,7 +15,11 @@
         android:id="@+id/fragment_classes"
         android:name="com.example.dungeonsdragons.views.ui.classes.FragmentClasses"
         android:label="Clases"
-        tools:layout="@layout/fragment_classes" />
+        tools:layout="@layout/fragment_classes">
+        <action
+            android:id="@+id/get_class_specs"
+            app:destination="@id/fragmentClassesSpecs" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_races"
         android:name="com.example.dungeonsdragons.views.ui.races.FragmentRaces"
@@ -26,4 +30,9 @@
         android:name="com.example.dungeonsdragons.views.ui.spells.FragmentSpells"
         android:label="Hechizos"
         tools:layout="@layout/fragment_spells" />
+    <fragment
+        android:id="@+id/fragmentClassesSpecs"
+        android:name="com.example.dungeonsdragons.views.ui.classes.FragmentClassesSpecs"
+        android:label="fragment_classes_specs"
+        tools:layout="@layout/fragment_classes_specs" />
 </navigation>

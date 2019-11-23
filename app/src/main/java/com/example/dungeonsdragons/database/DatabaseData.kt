@@ -1,5 +1,6 @@
 package com.example.dungeonsdragons.database
 
+import com.example.dungeonsdragons.R
 import com.example.dungeonsdragons.entitities.*
 
 /**
@@ -200,12 +201,40 @@ val PREPOPULATE_CLASSES = arrayOf(
     Class(
         0,
         "Brujo",
-        8
+        8,
+        R.drawable.ic_warlock,
+        "Envuelto en una túnica dorada y con su pseudodragón enroscado en torno al hombro, un " +
+                "joven elfo sonríe con calidez, tejiendo un encantamiento mágico en sus melifluas " +
+                "palabras y doblegando a los centinelas del palacio a su voluntad." +
+                "\nMientras las llamas cobran vida en sus manos, una marchita humana susurra el " +
+                "nombre secreto de su patrón demoníacom que como respuesta llena el conjuro de " +
+                "magia infernal." +
+                "\nUn tiefling de ojos salvajes levanta la vista de un maltratado tomo para observar " +
+                "el extraño alineamiento estelar que brilla en el cielo. Sus lanios pronuncian las " +
+                "salmodias de de un ritual místico, que abrirá un portal a un mundo remoto." +
+                "\nLos brujos buscan el conocimiento que yace escondido en el tejido mismo del multiverso. " +
+                "A través de pactos forjados con misteriosos seres de poder sobrenatural, desvelan efectos " +
+                "mágicos sutiles y espectaculares a partes iguales. A partir del conocimiento ancestral " +
+                "poseído como nobles feéricos, demonios, diablos, sagas o los extraños seres del Reino " +
+                "Lejano, los brujos descubren secretos arcanos que refuerzan sus propios poderes.",
+        R.drawable.pic_warlock
+
     ),
     Class(
         1,
         "Cazador de Brujas",
-        8
+        8,
+        R.drawable.ic_bloodhunter,
+        "En un paisaje aﬂ igido por todo tipo de bestias, diablos, y abominaciones de más " +
+                "allá del velo, la mayoría viven con miedo a la oscuridad, a la superstición, y a " +
+                "lo desconocido. Algunos se endurecen por esta experiencia, eligen levantarse y " +
+                "luchar contra la marea de la oscuridad. A este tipo de gente se les llama " +
+                "‘héroes’. \nAlgunos, sin embargo, son tan fanáticos y están tan determinados a " +
+                "destruir la anatema que plaga la campiña que abrazan el conocimiento oscuro y " +
+                "prohibido. Investigan obsesivamente arcanos olvidados y alquimias experimentales y " +
+                "peligrosas para convertirse en el perfecto cazador que su humanidad a menudo se " +
+                "pone en entredicho. A este tipo de gente se les llama ‘Cazadores de Brujas’. ",
+        R.drawable.pic_blood_hunter
     )
 )
 
