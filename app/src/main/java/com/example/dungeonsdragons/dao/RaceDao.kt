@@ -15,7 +15,7 @@ interface RaceDao {
     fun deleteRaces(vararg race: Race)
 
     @Query("SELECT * FROM races_table")
-    fun loadAllRaces(): Array<Race>
+    suspend fun loadAllRaces(): Array<Race>
 
     @Query("SELECT * FROM races_table WHERE id = :id")
     fun loadRaceById(id: Int): Array<Race>

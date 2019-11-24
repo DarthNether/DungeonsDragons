@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 data class Race(
     @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "desc") val desc: String,
     @ColumnInfo(name = "speed") val speed: Int,
     @ColumnInfo(name = "str_bonus") val str_bonus: Int = 0,
     @ColumnInfo(name = "dex_bonus") val dex_bonus: Int = 0,
@@ -18,5 +19,7 @@ data class Race(
     @ColumnInfo(name = "alignment") val align: String?,
     @ColumnInfo(name = "age") val age: String?,
     @ColumnInfo(name = "size") val size: String,
-    @ColumnInfo(name = "size_desc") val size_desc: String?
+    @ColumnInfo(name = "size_desc") val size_desc: String?,
+    @ColumnInfo(name = "icon") val icon: Int,
+    @ColumnInfo(name = "pic") val pic: Int
 )

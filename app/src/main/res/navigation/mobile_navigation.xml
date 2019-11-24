@@ -25,7 +25,11 @@
         android:id="@+id/fragment_races"
         android:name="com.example.dungeonsdragons.views.ui.races.FragmentRaces"
         android:label="Razas"
-        tools:layout="@layout/fragment_races" />
+        tools:layout="@layout/fragment_races">
+        <action
+            android:id="@+id/get_race_specs"
+            app:destination="@id/fragmentRacesSpecs" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_spells"
         android:name="com.example.dungeonsdragons.views.ui.spells.FragmentSpells"
@@ -36,4 +40,9 @@
         android:name="com.example.dungeonsdragons.views.ui.classes.FragmentClassesSpecs"
         android:label="fragment_classes_specs"
         tools:layout="@layout/fragment_classes_specs" />
+    <fragment
+        android:id="@+id/fragmentRacesSpecs"
+        android:name="com.example.dungeonsdragons.views.ui.races.FragmentRacesSpecs"
+        android:label="fragment_races_specs"
+        tools:layout="@layout/fragment_races_specs" />
 </navigation>

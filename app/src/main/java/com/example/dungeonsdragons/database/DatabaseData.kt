@@ -148,6 +148,10 @@ val PREPOPULATE_RACES = arrayOf(
     Race(
         id = 0,
         name = "Enano",
+        desc = "Reinos rebosantes de antiguo esplendor, salas excavadas en las raíces de las montañas, " +
+                "forjas abrasadoras, el resonar de los picos y martillos en las minas, el compromiso " +
+                "con el clan y la tradición, y el odio a los orcos y goblins. Estas son las hebras " +
+                "que todos los enanos comparten",
         speed = 25,
         cons_bonus = 2,
         align = "La mayoría de los enanos son legales, pues creen firmemente en los beneficios de " +
@@ -157,11 +161,19 @@ val PREPOPULATE_RACES = arrayOf(
         age = "Los enanos alcanzan la madurez a la misma edad que los humanos, pero se les considera " +
                 "jóvenes hasta los cincuenta años. Viven, de media, unos 350 años.",
         size = "Mediano",
-        size_desc = "Los enanos miden entre 4 y 5 pies de altura y pesan unas 150 libras de media."
+        size_desc = "Los enanos miden entre 4 y 5 pies de altura y pesan unas 150 libras de media.",
+        icon = R.drawable.ic_dwarf,
+        pic = R.drawable.dwarf_pic
     ),
     Race(
         id = 1,
         name = "Elfo",
+        desc = "Los elfos son un pueblo de gracia ultraterrena, que viven en el mundo, pero no " +
+                "forman completamente parte de él. Habitan en lugares de belleza etérea, en medio " +
+                "de ancianos bosque o en torres plateadas que brillan con una luz feérica. Son " +
+                "espacios en los que una suave música flota en el ambiente y la brisa trae una dulce " +
+                "fragancia. Los elfos aman la naturaleza y la magia, el arte y la artesanía, la " +
+                "música y la poesía.",
         speed = 30,
         dex_bonus = 2,
         align = "Los elfos aman la libertad, la variedad y la expresión personal, por lo que " +
@@ -175,11 +187,20 @@ val PREPOPULATE_RACES = arrayOf(
                 "su nuevo nombre tras unos cien años y pueden llegar a vivir hasta setecientos cincuenta.",
         size = "Mediano",
         size_desc = "Los elfos miden entre poco menos de 5 pies y algo más de 6 pies de altura y " +
-                "son esbeltos."
+                "son esbeltos.",
+        icon = R.drawable.ic_elf,
+        pic = R.drawable.elf_pic
     ),
     Race(
         id = 2,
         name = "Tiefling",
+        desc = "Ser recibido con miradas y susurros, ser víctima de la violencia y los insultos por " +
+                "la calle, observar desconfianza y miedo en todos los rostros; este es el destino de " +
+                "los tieflings. Y, para añadir sal a la herida, los tiefling saben que esto se debe " +
+                "a un pacto, sellado hace generaciones, que impregnó su linaje conla esemcia de " +
+                "Asmodeo, amo de los Nueve Infiernos. La apariencia y naturaleza de los tieflings " +
+                "no son culpa suya, sino de un pecado ancestral, por el que tanto ellos como su " +
+                "descendencia deberán responder para siempre.",
         speed = 30,
         cha_bonus = 2,
         int_bonus = 1,
@@ -190,7 +211,9 @@ val PREPOPULATE_RACES = arrayOf(
                 "pocos años más.",
         size = "Mediano",
         size_desc = "Los tieflings son aproximadamente de la misma altura y constitución que los " +
-                "humanos."
+                "humanos.",
+        icon = R.drawable.ic_tiefling,
+        pic = R.drawable.tiefling_pic
     )
 )
 
@@ -206,13 +229,13 @@ val PREPOPULATE_CLASSES = arrayOf(
         "Envuelto en una túnica dorada y con su pseudodragón enroscado en torno al hombro, un " +
                 "joven elfo sonríe con calidez, tejiendo un encantamiento mágico en sus melifluas " +
                 "palabras y doblegando a los centinelas del palacio a su voluntad." +
-                "\nMientras las llamas cobran vida en sus manos, una marchita humana susurra el " +
-                "nombre secreto de su patrón demoníacom que como respuesta llena el conjuro de " +
+                "\n\nMientras las llamas cobran vida en sus manos, una marchita humana susurra el " +
+                "nombre secreto de su patrón demoníaco que como respuesta llena el conjuro de " +
                 "magia infernal." +
-                "\nUn tiefling de ojos salvajes levanta la vista de un maltratado tomo para observar " +
+                "\n\nUn tiefling de ojos salvajes levanta la vista de un maltratado tomo para observar " +
                 "el extraño alineamiento estelar que brilla en el cielo. Sus lanios pronuncian las " +
                 "salmodias de de un ritual místico, que abrirá un portal a un mundo remoto." +
-                "\nLos brujos buscan el conocimiento que yace escondido en el tejido mismo del multiverso. " +
+                "\n\nLos brujos buscan el conocimiento que yace escondido en el tejido mismo del multiverso. " +
                 "A través de pactos forjados con misteriosos seres de poder sobrenatural, desvelan efectos " +
                 "mágicos sutiles y espectaculares a partes iguales. A partir del conocimiento ancestral " +
                 "poseído como nobles feéricos, demonios, diablos, sagas o los extraños seres del Reino " +
@@ -229,7 +252,7 @@ val PREPOPULATE_CLASSES = arrayOf(
                 "allá del velo, la mayoría viven con miedo a la oscuridad, a la superstición, y a " +
                 "lo desconocido. Algunos se endurecen por esta experiencia, eligen levantarse y " +
                 "luchar contra la marea de la oscuridad. A este tipo de gente se les llama " +
-                "‘héroes’. \nAlgunos, sin embargo, son tan fanáticos y están tan determinados a " +
+                "‘héroes’. \n\nAlgunos, sin embargo, son tan fanáticos y están tan determinados a " +
                 "destruir la anatema que plaga la campiña que abrazan el conocimiento oscuro y " +
                 "prohibido. Investigan obsesivamente arcanos olvidados y alquimias experimentales y " +
                 "peligrosas para convertirse en el perfecto cazador que su humanidad a menudo se " +

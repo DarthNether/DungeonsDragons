@@ -16,6 +16,10 @@
     <string name="menu_races">Razas</string>
 
     <string name="clazz">Clase</string>
+    <string name="race">Raza</string>
+    <string name="race_align">Alineamiento</string>
+    <string name="race_age">Edad</string>
+    <string name="race_size">Tamaño</string>
     <string name="desc">Descripción</string>
 
     <string name="home_second">Home Second</string>

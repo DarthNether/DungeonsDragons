@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.ui.races.FragmentRacesSpecs">
+
+    <ScrollView
+        android:id="@+id/race_details_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/race_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_race_pic"
+                android:layout_width="0dp"
+                android:layout_height="235dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.533"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_race_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@string/race"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.023"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/img_race_pic" />
+
+            <TextView
+                android:id="@+id/txt_race_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/desc"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_title" />
+
+            <TextView
+                android:id="@+id/txt_race_align"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/race_align"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_desc" />
+
+            <TextView
+                android:id="@+id/txt_race_align_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/desc"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_align" />
+
+            <TextView
+                android:id="@+id/txt_race_age"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/race_age"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_align_desc" />
+
+            <TextView
+                android:id="@+id/txt_race_age_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/desc"
+                android:textAlignment="textStart"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_age" />
+
+            <TextView
+                android:id="@+id/txt_race_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/race_size"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_age_desc" />
+
+            <TextView
+                android:id="@+id/txt_race_size_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/desc"
+                android:textAlignment="textStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/img_race_pic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_race_pic"
+                app:layout_constraintTop_toBottomOf="@+id/txt_race_size" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
