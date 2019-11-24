@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.dungeonsdragons.R
 import com.example.dungeonsdragons.viewmodels.ClassesViewModel
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_classes_specs.*
 
 class FragmentClassesSpecs : Fragment() {
@@ -27,6 +28,7 @@ class FragmentClassesSpecs : Fragment() {
         super.onActivityCreated(savedInstanceState)
         classesViewModel.selectedClass.observe(viewLifecycleOwner,
             Observer {
+                activity?.toolbar?.title = it.name
                 txt_class_title.text = it.name
                 img_class_pic.setImageDrawable(ContextCompat.getDrawable(requireContext(), it.pic))
                 txt_class_desc.text = it.desc

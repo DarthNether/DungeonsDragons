@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dungeonsdragons.R
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +35,7 @@ class fragment_characters : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        activity?.fab?.show()
         return inflater.inflate(R.layout.fragment_characters, container, false)
     }
 

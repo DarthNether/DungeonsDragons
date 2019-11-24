@@ -18,7 +18,8 @@
         tools:layout="@layout/fragment_classes">
         <action
             android:id="@+id/get_class_specs"
-            app:destination="@id/fragmentClassesSpecs" />
+            app:destination="@id/fragmentClassesSpecs"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/fragment_races"

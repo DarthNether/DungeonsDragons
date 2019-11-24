@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dungeonsdragons.R
 import com.example.dungeonsdragons.entitities.Class
 import com.example.dungeonsdragons.viewmodels.ClassesViewModel
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_classes.*
 
 
@@ -20,7 +21,6 @@ class FragmentClasses : Fragment() {
     private val classesAdapter by lazy { ClassesAdapter(::selectClassAndNavigateToDetails) }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-
         super.onActivityCreated(savedInstanceState)
         classes_recycler.run {
             adapter = classesAdapter
@@ -28,6 +28,7 @@ class FragmentClasses : Fragment() {
         }
         classesViewModel.classes.observe(viewLifecycleOwner,
             Observer {
+                activity?.fab?.hide()
                 classesAdapter.classes = it
                 classesAdapter.notifyDataSetChanged()
             })
