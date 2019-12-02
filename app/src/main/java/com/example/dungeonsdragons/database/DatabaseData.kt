@@ -233,7 +233,7 @@ val PREPOPULATE_CLASSES = arrayOf(
                 "nombre secreto de su patrón demoníaco que como respuesta llena el conjuro de " +
                 "magia infernal." +
                 "\n\nUn tiefling de ojos salvajes levanta la vista de un maltratado tomo para observar " +
-                "el extraño alineamiento estelar que brilla en el cielo. Sus lanios pronuncian las " +
+                "el extraño alineamiento estelar que brilla en el cielo. Sus labios pronuncian las " +
                 "salmodias de de un ritual místico, que abrirá un portal a un mundo remoto." +
                 "\n\nLos brujos buscan el conocimiento que yace escondido en el tejido mismo del multiverso. " +
                 "A través de pactos forjados con misteriosos seres de poder sobrenatural, desvelan efectos " +
@@ -248,11 +248,11 @@ val PREPOPULATE_CLASSES = arrayOf(
         "Cazador de Brujas",
         8,
         R.drawable.ic_bloodhunter,
-        "En un paisaje aﬂ igido por todo tipo de bestias, diablos, y abominaciones de más " +
+        "En un paisaje aﬂigido por todo tipo de bestias, diablos, y abominaciones de más " +
                 "allá del velo, la mayoría viven con miedo a la oscuridad, a la superstición, y a " +
                 "lo desconocido. Algunos se endurecen por esta experiencia, eligen levantarse y " +
                 "luchar contra la marea de la oscuridad. A este tipo de gente se les llama " +
-                "‘héroes’. \n\nAlgunos, sin embargo, son tan fanáticos y están tan determinados a " +
+                "'héroes'. \n\nAlgunos, sin embargo, son tan fanáticos y están tan determinados a " +
                 "destruir la anatema que plaga la campiña que abrazan el conocimiento oscuro y " +
                 "prohibido. Investigan obsesivamente arcanos olvidados y alquimias experimentales y " +
                 "peligrosas para convertirse en el perfecto cazador que su humanidad a menudo se " +
@@ -314,7 +314,7 @@ val PREPOPULATE_SUBRACES = arrayOf(
 )
 
 /**
- * Subclasses
+ * Subclassespp
  */
 val PREPOPULATE_SUBCLASSES = arrayOf(
     Subclass(

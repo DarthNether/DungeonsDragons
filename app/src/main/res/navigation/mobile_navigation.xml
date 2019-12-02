@@ -10,7 +10,14 @@
         android:id="@+id/fragment_characters"
         android:name="com.example.dungeonsdragons.views.ui.characters.fragment_characters"
         android:label="Personajes"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/get_character_details"
+            app:destination="@id/fragment_character_details" />
+        <action
+            android:id="@+id/create_character"
+            app:destination="@id/fragment_character_creation" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_classes"
         android:name="com.example.dungeonsdragons.views.ui.classes.FragmentClasses"
@@ -45,4 +52,14 @@
         android:name="com.example.dungeonsdragons.views.ui.races.FragmentRacesSpecs"
         android:label="fragment_races_specs"
         tools:layout="@layout/fragment_races_specs" />
+    <fragment
+        android:id="@+id/fragment_character_details"
+        android:name="com.example.dungeonsdragons.views.ui.characters.CharacterDetailsFragment"
+        android:label="fragment_charcter_details_fragments"
+        tools:layout="@layout/fragment_character_details" />
+    <fragment
+        android:id="@+id/fragment_character_creation"
+        android:name="com.example.dungeonsdragons.views.ui.characters.CharacterCreationFragment"
+        android:label="fragment_character_creation"
+        tools:layout="@layout/fragment_character_creation" />
 </navigation>
