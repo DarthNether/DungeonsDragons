@@ -3,6 +3,7 @@ package com.example.dungeonsdragons.dao
 import androidx.room.*
 import com.example.dungeonsdragons.entitities.Alignment
 
+@Dao
 interface AlignmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAlignments(vararg alignments: Alignment)
