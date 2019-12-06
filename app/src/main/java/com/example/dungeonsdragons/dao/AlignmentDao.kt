@@ -1,0 +1,23 @@
+package com.example.dungeonsdragons.dao
+
+import androidx.room.*
+import com.example.dungeonsdragons.entitities.Alignment
+
+interface AlignmentDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAlignments(vararg alignments: Alignment)
+
+    @Update
+    fun updateAlignments(vararg alignments: Alignment)
+
+    @Delete
+    fun deleteAlignments(vararg alignments: Alignment)
+
+    @Query("SELECT * FROM alignments_table")
+    fun loadAllAlignments(): Array<Alignment>
+
+    @Query("SELECT * FROM alignments_table WHERE id = :id")
+    fun loadAlignmentById(id: Int): Array<Alignment>
+
+
+}

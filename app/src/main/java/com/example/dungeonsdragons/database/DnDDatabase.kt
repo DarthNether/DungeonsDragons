@@ -10,8 +10,9 @@ import com.example.dungeonsdragons.entitities.*
 import com.example.dungeonsdragons.utilities.ioThread
 
 @Database(
-    entities = [Ability::class, Armor::class, Background::class, Bond::class, Class::class,
-        Condition::class, DamageType::class, Equipment::class, Feature::class, Flaw::class, Ideal::class,
+    entities = [Ability::class, AbilityScore::class, Alignment::class, Armor::class,
+        Background::class, Bond::class, Character::class, Class::class, Condition::class,
+        DamageType::class, Equipment::class, Feature::class, Flaw::class, Ideal::class,
         Language::class, Level::class, MagicSchool::class, PersonalityTrait::class,
         Proficiency::class, ProficiencyBackground::class, ProficiencyClass::class,
         ProficiencyRace::class, Race::class, RaceLanguage::class, Skill::class, Spell::class,
@@ -111,15 +112,23 @@ abstract class DnDDatabase : RoomDatabase() {
                             getInstance(context).traitSubraceDao()
                                 .insertTraitSubrace(*PREPOPULATE_TRAITS_SUBRACES)
                         }
+
+                        ioThread {
+                            getInstance(context).alignmentDao()
+                                .insertAlignments(*PREPOPULATE_ALIGNMENTS)
+                        }
                     }
                 }).build()
     }
 
 
     abstract fun abilityDao(): AbilityDao
+    abstract fun abilityScoreDao(): AbilityScoreDao
+    abstract fun alignmentDao(): AlignmentDao
     abstract fun armorDao(): ArmorDao
     abstract fun backgroundDao(): BackgroundDao
     abstract fun bondDao(): BondDao
+    abstract fun characterDao(): CharacterDao
     abstract fun classDao(): ClassDao
     abstract fun conditionDao(): ConditionDao
     abstract fun damageTypeDao(): DamageTypeDao

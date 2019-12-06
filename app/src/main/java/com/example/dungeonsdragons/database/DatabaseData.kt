@@ -488,3 +488,42 @@ val PREPOPULATE_TRAITS_SUBRACES = arrayOf(
         6
     )
 )
+
+val PREPOPULATE_ALIGNMENTS = arrayOf(
+    Alignment(
+        0,
+        "Legal Bueno"
+    ),
+    Alignment(
+        0,
+        "Neutral Bueno"
+    ),
+    Alignment(
+        0,
+        "Caótico Bueno"
+    ),
+    Alignment(
+        0,
+        "Legal Neutral"
+    ),
+    Alignment(
+        0,
+        "Neutral"
+    ),
+    Alignment(
+        0,
+        "Caótico Neutral"
+    ),
+    Alignment(
+        0,
+        "Legal Malvado"
+    ),
+    Alignment(
+        0,
+        "Neutral Malvado"
+    ),
+    Alignment(
+        0,
+        "Caótico Malvado"
+    )
+)
