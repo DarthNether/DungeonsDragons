@@ -5,29 +5,42 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.dungeonsdragons.R
+import com.example.dungeonsdragons.entitities.Character
+import com.example.dungeonsdragons.viewmodels.CharactersViewModel
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fragment_characters.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class fragment_characters : Fragment() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private val charactersViewModel by activityViewModels<CharactersViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewManager = LinearLayoutManager(activity)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        charactersViewModel.characters.observe(viewLifecycleOwner,
+            Observer {
+                activity?.fab?.show()
+                activity?.fab?.setOnClickListener {
+                    charactersViewModel.selectedCharacter.value =
+                        Character(
+                            0,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null,
+                            null
+                        )
+
+                    findNavController().navigate(R.id.create_character)
+                }
+            })
     }
 
     override fun onCreateView(
@@ -35,26 +48,6 @@ class fragment_characters : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.fab?.show()
         return inflater.inflate(R.layout.fragment_characters, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragment_characters.
-         */
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragment_characters().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

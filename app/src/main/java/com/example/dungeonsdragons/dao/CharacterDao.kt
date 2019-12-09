@@ -15,7 +15,7 @@ interface CharacterDao {
     fun deleteCharacters(vararg characters: Character)
 
     @Query("SELECT * FROM characters_table")
-    fun loadAllCharacters(): Array<Character>
+    suspend fun loadAllCharacters(): Array<Character>
 
     @Query("SELECT * FROM characters_table WHERE id = :id")
     fun loadCharacterById(id: Int): Array<Character>

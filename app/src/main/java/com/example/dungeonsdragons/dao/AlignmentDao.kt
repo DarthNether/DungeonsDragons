@@ -15,7 +15,7 @@ interface AlignmentDao {
     fun deleteAlignments(vararg alignments: Alignment)
 
     @Query("SELECT * FROM alignments_table")
-    fun loadAllAlignments(): Array<Alignment>
+    suspend fun loadAllAlignments(): Array<Alignment>
 
     @Query("SELECT * FROM alignments_table WHERE id = :id")
     fun loadAlignmentById(id: Int): Array<Alignment>

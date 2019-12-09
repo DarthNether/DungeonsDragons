@@ -16,7 +16,7 @@
             app:destination="@id/fragment_character_details" />
         <action
             android:id="@+id/create_character"
-            app:destination="@id/fragment_character_creation" />
+            app:destination="@id/fragment_character_description" />
     </fragment>
     <fragment
         android:id="@+id/fragment_classes"
@@ -27,6 +27,9 @@
             android:id="@+id/get_class_specs"
             app:destination="@id/fragmentClassesSpecs"
             app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_fragment_classes_to_fragment_character_details"
+            app:destination="@id/fragment_character_details" />
     </fragment>
     <fragment
         android:id="@+id/fragment_races"
@@ -36,6 +39,9 @@
         <action
             android:id="@+id/get_race_specs"
             app:destination="@id/fragmentRacesSpecs" />
+        <action
+            android:id="@+id/choose_class"
+            app:destination="@id/fragment_classes" />
     </fragment>
     <fragment
         android:id="@+id/fragment_spells"
@@ -58,8 +64,12 @@
         android:label="fragment_charcter_details_fragments"
         tools:layout="@layout/fragment_character_details" />
     <fragment
-        android:id="@+id/fragment_character_creation"
-        android:name="com.example.dungeonsdragons.views.ui.characters.CharacterCreationFragment"
-        android:label="fragment_character_creation"
-        tools:layout="@layout/fragment_character_creation" />
+        android:id="@+id/fragment_character_description"
+        android:name="com.example.dungeonsdragons.views.ui.characters.CharacterDescriptionFragment"
+        android:label="fragment_character_description"
+        tools:layout="@layout/fragment_character_description">
+        <action
+            android:id="@+id/choose_race"
+            app:destination="@id/fragment_races" />
+    </fragment>
 </navigation>
