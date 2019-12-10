@@ -26,11 +26,11 @@ import androidx.room.PrimaryKey
 )
 class Character(
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @ColumnInfo(name = "name") val char_name: Int?,
-    @ColumnInfo(name = "alignment") val alignment: String?,
-    @ColumnInfo(name = "characteristics") val characteristics: String?,
-    @ColumnInfo(name = "personality") val peronality: String?,
-    @ColumnInfo(name = "backstory") val backstory: String?,
-    @ColumnInfo(name = "race") val race: Int?,
-    @ColumnInfo(name = "class") val clazz: Int?
+    @ColumnInfo(name = "name") var char_name: String?,
+    @ColumnInfo(name = "alignment") var alignment: String?,
+    @ColumnInfo(name = "appearance") var appearance: String?,
+    @ColumnInfo(name = "personality") var personality: String?,
+    @ColumnInfo(name = "backstory") var backstory: String?,
+    @ColumnInfo(name = "race") var race: Int?,
+    @ColumnInfo(name = "class") var clazz: Int?
 )

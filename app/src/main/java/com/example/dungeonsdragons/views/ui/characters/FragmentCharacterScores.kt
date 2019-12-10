@@ -10,14 +10,14 @@ import com.example.dungeonsdragons.R
 /**
  * A simple [Fragment] subclass.
  */
-class CharacterDetailsFragment : Fragment() {
+class FragmentCharacterScores : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_character_details, container, false)
+        return inflater.inflate(R.layout.fragment_character_scores, container, false)
     }
 
 }

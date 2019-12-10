@@ -8,15 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dungeonsdragons.R
 import com.example.dungeonsdragons.entitities.Class
+import com.example.dungeonsdragons.viewmodels.CharactersViewModel
 import com.example.dungeonsdragons.viewmodels.ClassesViewModel
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_classes.*
 
 
 class FragmentClasses : Fragment() {
+    private val charactersViewModel by activityViewModels<CharactersViewModel>()
     private val classesViewModel by activityViewModels<ClassesViewModel>()
     private val classesAdapter by lazy { ClassesAdapter(::selectClassAndNavigateToDetails) }
 
@@ -43,6 +46,13 @@ class FragmentClasses : Fragment() {
     }
 
     fun selectClassAndNavigateToDetails(clazz: Class) {
+        val args: FragmentClassesArgs by navArgs<FragmentClassesArgs>()
+
+        if (args.creatingCharacter) {
+            charactersViewModel.selectedCharacter.value?.clazz = clazz.id
+            findNavController().navigate(R.id.set_scores)
+        }
+
         classesViewModel.selectedClass.value = clazz
         findNavController().navigate(R.id.get_class_specs)
     }

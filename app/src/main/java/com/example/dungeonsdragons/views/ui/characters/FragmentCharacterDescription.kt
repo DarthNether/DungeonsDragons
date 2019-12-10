@@ -8,14 +8,16 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.dungeonsdragons.R
+import com.example.dungeonsdragons.entitities.Character
 import com.example.dungeonsdragons.viewmodels.AlignmentsViewModel
 import com.example.dungeonsdragons.viewmodels.CharactersViewModel
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_character_description.*
 
 
-class CharacterDescriptionFragment : Fragment() {
+class FragmentCharacterDescription : Fragment() {
     private val charactersViewModel by activityViewModels<CharactersViewModel>()
     private val alignmentsViewModel by activityViewModels<AlignmentsViewModel>()
 
@@ -37,7 +39,25 @@ class CharacterDescriptionFragment : Fragment() {
                 alignment_menu.setAdapter(alignmentsAdapter)
             })
 
+        btn_to_race.setOnClickListener { _ -> navigateToRaceSelection() }
         activity?.fab?.hide()
         activity?.toolbar?.title = getString(R.string.desc)
+    }
+
+    private fun navigateToRaceSelection() {
+        charactersViewModel.selectedCharacter.value =
+            Character(
+                0,
+                txt_character_name.text.toString(),
+                alignment_menu.text.toString(),
+                txt_appearance.text.toString(),
+                txt_personality.text.toString(),
+                txt_backstory.text.toString(),
+                null,
+                null
+            )
+
+        val action = FragmentCharacterDescriptionDirections.chooseRace()
+        findNavController().navigate(action)
     }
 }

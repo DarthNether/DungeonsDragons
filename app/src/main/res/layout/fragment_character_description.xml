@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ui.characters.CharacterDescriptionFragment">
+    tools:context=".views.ui.characters.FragmentCharacterDescription">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/appearance"
-                    android:inputType="textCapSentences"
+                    android:inputType="textCapSentences|textMultiLine"
                     android:minHeight="100dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,30 +89,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/personality"
-                    android:inputType="textCapSentences"
+                    android:inputType="textCapSentences|textMultiLine"
                     android:minHeight="100dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_background_layout"
+                android:id="@+id/txt_backstory_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txt_character_name_layout"
                 app:layout_constraintStart_toStartOf="@+id/txt_character_name_layout"
                 app:layout_constraintTop_toBottomOf="@+id/txt_personality_layout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/txt_background"
+                    android:id="@+id/txt_backstory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/background"
-                    android:inputType="textCapSentences"
+                    android:inputType="textCapSentences|textMultiLine"
                     android:minHeight="100dp" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_to_race"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/next"
+                app:backgroundTint="@color/colorPrimary"
+                app:icon="@drawable/baseline_navigate_next_white_24dp"
+                app:iconGravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/txt_character_name_layout"
+                app:layout_constraintStart_toStartOf="@+id/txt_character_name_layout"
+                app:layout_constraintTop_toBottomOf="@+id/txt_backstory_layout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
