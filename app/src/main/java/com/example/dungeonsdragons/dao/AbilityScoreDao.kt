@@ -6,7 +6,7 @@ import com.example.dungeonsdragons.entitities.AbilityScore
 @Dao
 interface AbilityScoreDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAbilityScores(vararg scores: AbilityScore)
+    suspend fun insertAbilityScores(vararg scores: AbilityScore)
 
     @Update
     fun updateAbilityScores(vararg scores: AbilityScore)

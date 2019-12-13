@@ -12,7 +12,7 @@ data class Race(
     @ColumnInfo(name = "speed") val speed: Int,
     @ColumnInfo(name = "str_bonus") val str_bonus: Int = 0,
     @ColumnInfo(name = "dex_bonus") val dex_bonus: Int = 0,
-    @ColumnInfo(name = "con_bonus") val cons_bonus: Int = 0,
+    @ColumnInfo(name = "con_bonus") val con_bonus: Int = 0,
     @ColumnInfo(name = "int_bonus") val int_bonus: Int = 0,
     @ColumnInfo(name = "wis_bonus") val wis_bonus: Int = 0,
     @ColumnInfo(name = "cha_bonus") val cha_bonus: Int = 0,

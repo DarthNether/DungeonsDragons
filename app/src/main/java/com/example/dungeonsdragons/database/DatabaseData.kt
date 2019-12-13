@@ -153,7 +153,7 @@ val PREPOPULATE_RACES = arrayOf(
                 "con el clan y la tradición, y el odio a los orcos y goblins. Estas son las hebras " +
                 "que todos los enanos comparten",
         speed = 25,
-        cons_bonus = 2,
+        con_bonus = 2,
         align = "La mayoría de los enanos son legales, pues creen firmemente en los beneficios de " +
                 "una sociedad bien estructurada.  Además, también tienden a ser buenos, ya " +
                 "que poseen un fuerte sentido del juego limpio y creen que todos merecen compartir " +
@@ -314,7 +314,7 @@ val PREPOPULATE_SUBRACES = arrayOf(
 )
 
 /**
- * Subclassespp
+ * Subclasses
  */
 val PREPOPULATE_SUBCLASSES = arrayOf(
     Subclass(
@@ -489,6 +489,9 @@ val PREPOPULATE_TRAITS_SUBRACES = arrayOf(
     )
 )
 
+/**
+ * Alignments
+ */
 val PREPOPULATE_ALIGNMENTS = arrayOf(
     Alignment(
         0,

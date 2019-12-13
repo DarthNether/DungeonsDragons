@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.fragment_characters,
                 R.id.fragment_classes,
-                R.id.fragment_spells,
+//                R.id.fragment_spells,
                 R.id.fragment_races
             ), drawerLayout
         )

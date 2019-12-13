@@ -13,10 +13,12 @@
         tools:layout="@layout/fragment_characters">
         <action
             android:id="@+id/get_character_details"
-            app:destination="@id/fragment_character_details" />
+            app:destination="@id/fragment_character_details"
+            app:enterAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/create_character"
-            app:destination="@id/fragment_character_description" />
+            app:destination="@id/fragment_character_description"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/fragment_classes"
@@ -33,7 +35,8 @@
             app:argType="boolean" />
         <action
             android:id="@+id/set_scores"
-            app:destination="@id/fragmentCharacterScores" />
+            app:destination="@id/fragmentCharacterScores"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/fragment_races"
@@ -42,10 +45,12 @@
         tools:layout="@layout/fragment_races">
         <action
             android:id="@+id/get_race_specs"
-            app:destination="@id/fragmentRacesSpecs" />
+            app:destination="@id/fragmentRacesSpecs"
+            app:enterAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/choose_class"
-            app:destination="@id/fragment_classes">
+            app:destination="@id/fragment_classes"
+            app:enterAnim="@android:anim/fade_in">
             <argument
                 android:name="creating_character"
                 android:defaultValue="true" />
@@ -82,7 +87,8 @@
         tools:layout="@layout/fragment_character_description">
         <action
             android:id="@+id/choose_race"
-            app:destination="@id/fragment_races">
+            app:destination="@id/fragment_races"
+            app:enterAnim="@android:anim/fade_in">
             <argument
                 android:name="creating_character"
                 android:defaultValue="true" />
@@ -95,6 +101,7 @@
         tools:layout="@layout/fragment_character_scores">
         <action
             android:id="@+id/character_overview"
-            app:destination="@id/fragment_character_details" />
+            app:destination="@id/fragment_character_details"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
 </navigation>

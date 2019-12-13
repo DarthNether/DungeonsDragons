@@ -12,6 +12,7 @@ class CharactersViewModel(app: Application) : AndroidViewModel(app) {
     private val charactersRepository = getCharactersRepository(app.applicationContext)
     val characters = MutableLiveData<Array<Character>>()
     val selectedCharacter = MutableLiveData<Character>()
+    val insertId = MutableLiveData<Long>()
 
     init {
         loadCharacters()
@@ -19,5 +20,9 @@ class CharactersViewModel(app: Application) : AndroidViewModel(app) {
 
     fun loadCharacters() {
         viewModelScope.launch { characters.value = charactersRepository.getAllCharacters() }
+    }
+
+    fun insertCharacter(character: Character) {
+        viewModelScope.launch { insertId.value = charactersRepository.insertCharacter(character) }
     }
 }

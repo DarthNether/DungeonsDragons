@@ -2,10 +2,7 @@ package com.example.dungeonsdragons.utilities
 
 import android.content.Context
 import com.example.dungeonsdragons.database.DnDDatabase
-import com.example.dungeonsdragons.repositories.AlignmentsRepository
-import com.example.dungeonsdragons.repositories.CharactersRepository
-import com.example.dungeonsdragons.repositories.ClassesRepository
-import com.example.dungeonsdragons.repositories.RacesRepository
+import com.example.dungeonsdragons.repositories.*
 
 object InjectionUtils {
     fun getClassesRepository(context: Context) =
@@ -19,4 +16,7 @@ object InjectionUtils {
 
     fun getAlignmentsRepository(context: Context) =
         AlignmentsRepository.getInstance(DnDDatabase.getInstance(context).alignmentDao())
+
+    fun getAbilityScoresRepository(context: Context) =
+        AbilityScoresRepository.getInstance(DnDDatabase.getInstance(context).abilityScoreDao())
 }

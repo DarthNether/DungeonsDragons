@@ -6,7 +6,10 @@ import com.example.dungeonsdragons.entitities.Character
 @Dao
 interface CharacterDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCharacters(vararg characters: Character)
+    suspend fun insertCharacters(vararg characters: Character)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCharacter(character: Character): Long
 
     @Update
     fun updateCharacters(vararg characters: Character)
@@ -19,4 +22,7 @@ interface CharacterDao {
 
     @Query("SELECT * FROM characters_table WHERE id = :id")
     fun loadCharacterById(id: Int): Array<Character>
+
+    @Query("SELECT COUNT(*) FROM characters_table")
+    suspend fun getCount(): Int
 }

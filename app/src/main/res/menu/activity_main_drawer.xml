@@ -11,10 +11,10 @@
     </group>
 
     <group>
-        <item
-            android:id="@+id/fragment_spells"
-            android:icon="@drawable/ic_spells"
-            android:title="@string/menu_spells" />
+        <!--        <item-->
+        <!--            android:id="@+id/fragment_spells"-->
+        <!--            android:icon="@drawable/ic_spells"-->
+        <!--            android:title="@string/menu_spells" />-->
 
         <item
             android:id="@+id/fragment_classes"

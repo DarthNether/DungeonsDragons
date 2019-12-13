@@ -50,10 +50,13 @@ class FragmentClasses : Fragment() {
 
         if (args.creatingCharacter) {
             charactersViewModel.selectedCharacter.value?.clazz = clazz.id
-            findNavController().navigate(R.id.set_scores)
-        }
+            classesViewModel.selectedClass.value = clazz
 
-        classesViewModel.selectedClass.value = clazz
-        findNavController().navigate(R.id.get_class_specs)
+            findNavController().navigate(R.id.set_scores)
+        } else {
+            classesViewModel.selectedClass.value = clazz
+            findNavController().navigate(R.id.get_class_specs)
+
+        }
     }
 }

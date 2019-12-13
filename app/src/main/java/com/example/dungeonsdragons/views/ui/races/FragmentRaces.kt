@@ -49,6 +49,7 @@ class FragmentRaces : Fragment() {
 
         if (args.creatingCharacter) {
             charactersViewModel.selectedCharacter.value?.race = race.id
+            racesViewModel.selectedRace.value = race
 
             val action = FragmentRacesDirections.chooseClass()
             findNavController().navigate(action)

@@ -1,14 +1,540 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.ui.characters.FragmentCharacterScores">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_str_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_str"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/str"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_dex_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_con_layout"
+                app:layout_constraintStart_toEndOf="@+id/txt_str_layout"
+                app:layout_constraintTop_toTopOf="@+id/txt_str_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_dex"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/dex"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_con_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_dex_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/cons"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_int_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_str_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_int"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/intel"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_wis_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_cha_layout"
+                app:layout_constraintStart_toEndOf="@+id/txt_int_layout"
+                app:layout_constraintTop_toTopOf="@+id/txt_int_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_wis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/wis"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_cha_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_wis_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_cha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/cha"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="@string/calc"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                app:layout_constraintStart_toStartOf="@+id/txt_int_layout"
+                app:layout_constraintTop_toBottomOf="@+id/txt_int_layout" />
+
+            <TextView
+                android:id="@+id/txt_calc_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/str"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc" />
+
+            <TextView
+                android:id="@+id/txt_total_str"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_str"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_str" />
+
+            <TextView
+                android:id="@+id/txt_base_str"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_str"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_str" />
+
+            <TextView
+                android:id="@+id/txt_mod_str"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_str"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_str" />
+
+            <TextView
+                android:id="@+id/txt_total_str_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_str" />
+
+            <TextView
+                android:id="@+id/txt_base_str_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_str" />
+
+            <TextView
+                android:id="@+id/txt_mod_str_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_str" />
+
+            <TextView
+                android:id="@+id/txt_calc_dex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/dex"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_mod_str"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mod_str" />
+
+            <TextView
+                android:id="@+id/txt_total_dex"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_dex"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_dex" />
+
+            <TextView
+                android:id="@+id/txt_base_dex"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_dex"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_dex" />
+
+            <TextView
+                android:id="@+id/txt_mod_dex"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_dex"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_dex" />
+
+            <TextView
+                android:id="@+id/txt_total_dex_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_dex" />
+
+            <TextView
+                android:id="@+id/txt_base_dex_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_dex" />
+
+            <TextView
+                android:id="@+id/txt_mod_dex_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_dex" />
+
+            <TextView
+                android:id="@+id/txt_calc_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/cons"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_mod_dex"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mod_dex" />
+
+            <TextView
+                android:id="@+id/txt_total_con"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_con" />
+
+            <TextView
+                android:id="@+id/txt_base_con"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_con" />
+
+            <TextView
+                android:id="@+id/txt_mod_con"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_con" />
+
+            <TextView
+                android:id="@+id/txt_total_con_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_con" />
+
+            <TextView
+                android:id="@+id/txt_base_con_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_con" />
+
+            <TextView
+                android:id="@+id/txt_mod_con_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_con" />
+
+            <TextView
+                android:id="@+id/txt_calc_int"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/intel"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_mod_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mod_con" />
+
+            <TextView
+                android:id="@+id/txt_total_int"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_int"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_int" />
+
+            <TextView
+                android:id="@+id/txt_base_int"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_int"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_int" />
+
+            <TextView
+                android:id="@+id/txt_mod_int"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_int" />
+
+            <TextView
+                android:id="@+id/txt_total_int_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_int" />
+
+            <TextView
+                android:id="@+id/txt_base_int_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_int" />
+
+            <TextView
+                android:id="@+id/txt_mod_int_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_int" />
+
+            <TextView
+                android:id="@+id/txt_calc_wis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/wis"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_mod_int"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mod_int" />
+
+            <TextView
+                android:id="@+id/txt_total_wis"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_wis"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_wis" />
+
+            <TextView
+                android:id="@+id/txt_base_wis"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_wis"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_wis" />
+
+            <TextView
+                android:id="@+id/txt_mod_wis"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_wis" />
+
+            <TextView
+                android:id="@+id/txt_total_wis_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_wis" />
+
+            <TextView
+                android:id="@+id/txt_base_wis_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_wis" />
+
+            <TextView
+                android:id="@+id/txt_mod_wis_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_wis" />
+
+            <TextView
+                android:id="@+id/txt_calc_cha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/cha"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/txt_mod_wis"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mod_wis" />
+
+            <TextView
+                android:id="@+id/txt_total_cha"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/total_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_calc_cha"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calc_cha" />
+
+            <TextView
+                android:id="@+id/txt_base_cha"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/base_score"
+                app:layout_constraintStart_toStartOf="@+id/txt_total_cha"
+                app:layout_constraintTop_toBottomOf="@+id/txt_total_cha" />
+
+            <TextView
+                android:id="@+id/txt_mod_cha"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/racial_mod"
+                app:layout_constraintStart_toStartOf="@+id/txt_base_con"
+                app:layout_constraintTop_toBottomOf="@+id/txt_base_cha" />
+
+            <TextView
+                android:id="@+id/txt_total_cha_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_total_cha" />
+
+            <TextView
+                android:id="@+id/txt_base_cha_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_base_cha" />
+
+            <TextView
+                android:id="@+id/txt_mod_cha_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_mod_cha" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_creation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_mod_cha"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

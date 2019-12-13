@@ -14,6 +14,8 @@
     <string name="menu_spells">Hechizos</string>
     <string name="menu_classes">Clases</string>
     <string name="menu_races">Razas</string>
+    <string name="character">Personaje</string>
+    <string name="scores">Características</string>
 
     <string name="name">Nombre</string>
     <string name="alignment">Alineamiento</string>
@@ -22,6 +24,12 @@
     <string name="background">Trasfondo</string>
 
     <string name="next">Siguiente</string>
+    <string name="confirm">Confirmar</string>
+
+    <string name="calc">Cálculo de características</string>
+    <string name="base_score">Puntuación base</string>
+    <string name="total_score">Puntuación total</string>
+    <string name="racial_mod">Modificador racial</string>
 
     <string name="clazz">Clase</string>
     <string name="race">Raza</string>
@@ -30,6 +38,10 @@
     <string name="race_size">Tamaño</string>
     <string name="desc">Descripción</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str">Fuerza</string>
+    <string name="dex">Destreza</string>
+    <string name="cons">Constitución</string>
+    <string name="intel">Inteligencia</string>
+    <string name="wis">Sabiduría</string>
+    <string name="cha">Carisma</string>
 </resources>

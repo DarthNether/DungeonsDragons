@@ -9,11 +9,6 @@ import androidx.room.PrimaryKey
     tableName = "characters_table",
     foreignKeys = [
         ForeignKey(
-            entity = Alignment::class,
-            parentColumns = arrayOf("id"),
-            childColumns = arrayOf("alignment")
-        ),
-        ForeignKey(
             entity = Race::class,
             parentColumns = arrayOf("id"),
             childColumns = arrayOf("race")

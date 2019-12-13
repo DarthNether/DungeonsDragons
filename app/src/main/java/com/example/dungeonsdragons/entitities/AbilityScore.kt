@@ -23,5 +23,6 @@ class AbilityScore(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "character") val character: Int,
     @ColumnInfo(name = "ability") val ability: Int,
-    @ColumnInfo(name = "score") val score: Int
+    @ColumnInfo(name = "score") var score: Int,
+    @ColumnInfo(name = "bonus") var bonus: Int
 )
