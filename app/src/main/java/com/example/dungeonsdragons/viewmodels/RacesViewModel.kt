@@ -20,4 +20,8 @@ class RacesViewModel(app: Application) : AndroidViewModel(app) {
     fun loadRaces() {
         viewModelScope.launch { races.value = racesRepository.getAllRaces() }
     }
+
+    fun loadRaceById(id: Int) {
+        viewModelScope.launch { selectedRace.value = racesRepository.getRaceById(id) }
+    }
 }

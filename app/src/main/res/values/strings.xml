@@ -15,7 +15,13 @@
     <string name="menu_classes">Clases</string>
     <string name="menu_races">Razas</string>
     <string name="character">Personaje</string>
-    <string name="scores">Características</string>
+    <string name="abilities">Características</string>
+    <string name="skills">Habilidades</string>
+    <string name="mod">MOD</string>
+    <string name="skill">Habilidad</string>
+    <string name="ac">CA</string>
+    <string name="hp">PG</string>
+    <string name="speed">VELOCIDAD</string>
 
     <string name="name">Nombre</string>
     <string name="alignment">Alineamiento</string>
@@ -30,6 +36,7 @@
     <string name="base_score">Puntuación base</string>
     <string name="total_score">Puntuación total</string>
     <string name="racial_mod">Modificador racial</string>
+    <string name="details">Detalles</string>
 
     <string name="clazz">Clase</string>
     <string name="race">Raza</string>

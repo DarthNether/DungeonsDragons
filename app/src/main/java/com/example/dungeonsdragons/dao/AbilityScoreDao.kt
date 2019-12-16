@@ -18,7 +18,7 @@ interface AbilityScoreDao {
         """SELECT * FROM abilty_scores_table s
         WHERE s.character = :id"""
     )
-    fun loadCharacterAbilities(id: Int): Array<AbilityScore>
+    suspend fun loadCharacterAbilities(id: Int): Array<AbilityScore>
 
     @Query(
         """SELECT * FROM abilty_scores_table s

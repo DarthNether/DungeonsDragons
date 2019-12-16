@@ -19,4 +19,10 @@ object InjectionUtils {
 
     fun getAbilityScoresRepository(context: Context) =
         AbilityScoresRepository.getInstance(DnDDatabase.getInstance(context).abilityScoreDao())
+
+    fun getSkillsRepository(context: Context) =
+        SkillsRepository.getInstance(DnDDatabase.getInstance(context).skillDao())
+
+    fun getAbilitiesRepository(context: Context) =
+        AbilitiesRepository.getInstance(DnDDatabase.getInstance(context).abilityDao())
 }

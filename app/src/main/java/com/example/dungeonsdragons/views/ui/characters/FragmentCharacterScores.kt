@@ -7,13 +7,16 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.dungeonsdragons.R
-import com.example.dungeonsdragons.entitities.AbilityScore
+import com.example.dungeonsdragons.utilities.intVal
 import com.example.dungeonsdragons.viewmodels.AbilityScoresViewModel
 import com.example.dungeonsdragons.viewmodels.CharactersViewModel
 import com.example.dungeonsdragons.viewmodels.RacesViewModel
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_character_scores.*
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass.
@@ -34,7 +37,7 @@ class FragmentCharacterScores : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.toolbar?.title = getString(R.string.scores)
+        activity?.toolbar?.title = getString(R.string.abilities)
 
         txt_str.addTextChangedListener { _ -> calcStrengthValues() }
         txt_dex.addTextChangedListener { _ -> calcDexterityValues() }
@@ -43,122 +46,94 @@ class FragmentCharacterScores : Fragment() {
         txt_wis.addTextChangedListener { _ -> calcWisdomValues() }
         txt_cha.addTextChangedListener { _ -> calcCharismaValues() }
 
-        btn_confirm_creation.setOnClickListener { _ -> confirmCreation() }
+        btn_confirm_creation.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                confirmCreation()
+            }
+        }
     }
 
-    fun calcStrengthValues() {
-        if (!txt_str.text.toString().equals("")) {
-            val str_val = txt_str.text.toString().toInt()
+    private fun calcStrengthValues() {
+        if (txt_str.text.toString() != "") {
+            val strVal = txt_str.text.toString().toInt()
 
             txt_base_str_val.text = txt_str.text.toString()
             txt_mod_str_val.text = racesViewModel.selectedRace.value!!.str_bonus.toString()
             txt_total_str_val.text =
-                (str_val + racesViewModel.selectedRace.value!!.str_bonus).toString()
+                (strVal + racesViewModel.selectedRace.value!!.str_bonus).toString()
         }
     }
 
-    fun calcDexterityValues() {
-        if (!txt_dex.text.toString().equals("")) {
-            val dex_val = txt_dex.text.toString().toInt()
+    private fun calcDexterityValues() {
+        if (txt_dex.text.toString() != "") {
+            val dexVal = txt_dex.text.toString().toInt()
 
             txt_base_dex_val.text = txt_dex.text.toString()
             txt_mod_dex_val.text = racesViewModel.selectedRace.value!!.dex_bonus.toString()
             txt_total_dex_val.text =
-                (dex_val + racesViewModel.selectedRace.value!!.dex_bonus).toString()
+                (dexVal + racesViewModel.selectedRace.value!!.dex_bonus).toString()
         }
     }
 
-    fun calcConstitutionValues() {
-        if (!txt_con.text.toString().equals("")) {
-            val con_val = txt_con.text.toString().toInt()
+    private fun calcConstitutionValues() {
+        if (txt_con.text.toString() != "") {
+            val conVal = txt_con.text.toString().toInt()
 
             txt_base_con_val.text = txt_con.text.toString()
             txt_mod_con_val.text = racesViewModel.selectedRace.value!!.con_bonus.toString()
             txt_total_con_val.text =
-                (con_val + racesViewModel.selectedRace.value!!.con_bonus).toString()
+                (conVal + racesViewModel.selectedRace.value!!.con_bonus).toString()
         }
     }
 
-    fun calcIntelligenceValues() {
-        if (!txt_int.text.toString().equals("")) {
-            val int_val = txt_int.text.toString().toInt()
+    private fun calcIntelligenceValues() {
+        if (txt_int.text.toString() != "") {
+            val intVal = txt_int.text.toString().toInt()
 
             txt_base_int_val.text = txt_int.text.toString()
             txt_mod_int_val.text = racesViewModel.selectedRace.value!!.int_bonus.toString()
             txt_total_int_val.text =
-                (int_val + racesViewModel.selectedRace.value!!.int_bonus).toString()
+                (intVal + racesViewModel.selectedRace.value!!.int_bonus).toString()
         }
     }
 
-    fun calcWisdomValues() {
-        if (!txt_wis.text.toString().equals("")) {
-            val wis_val = txt_wis.text.toString().toInt()
+    private fun calcWisdomValues() {
+        if (txt_wis.text.toString() != "") {
+            val wisVal = txt_wis.text.toString().toInt()
 
             txt_base_wis_val.text = txt_wis.text.toString()
             txt_mod_wis_val.text = racesViewModel.selectedRace.value!!.wis_bonus.toString()
             txt_total_wis_val.text =
-                (wis_val + racesViewModel.selectedRace.value!!.wis_bonus).toString()
+                (wisVal + racesViewModel.selectedRace.value!!.wis_bonus).toString()
         }
     }
 
-    fun calcCharismaValues() {
-        if (!txt_cha.text.toString().equals("")) {
-            val cha_val = txt_cha.text.toString().toInt()
+    private fun calcCharismaValues() {
+        if (txt_cha.text.toString() != "") {
+            val chaVal = txt_cha.text.toString().toInt()
 
             txt_base_cha_val.text = txt_cha.text.toString()
             txt_mod_cha_val.text = racesViewModel.selectedRace.value!!.cha_bonus.toString()
             txt_total_cha_val.text =
-                (cha_val + racesViewModel.selectedRace.value!!.cha_bonus).toString()
+                (chaVal + racesViewModel.selectedRace.value!!.cha_bonus).toString()
         }
     }
 
-    fun confirmCreation() {
-        charactersViewModel.insertCharacter(charactersViewModel.selectedCharacter.value!!)
+    private suspend fun confirmCreation() {
 
-        val abilityScores = arrayOf(
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                0,
-                txt_str.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.str_bonus
-            ),
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                1,
-                txt_dex.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.dex_bonus
-            ),
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                2,
-                txt_con.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.con_bonus
-            ),
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                3,
-                txt_int.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.int_bonus
-            ),
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                4,
-                txt_wis.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.wis_bonus
-            ),
-            AbilityScore(
-                0,
-                charactersViewModel.insertId.value!!.toInt(),
-                5,
-                txt_cha.text.toString().toInt(),
-                racesViewModel.selectedRace.value!!.cha_bonus
-            )
+        charactersViewModel.insertCharacter()
+
+        abilityScoresViewModel.insertAbilityScores(
+            txt_str.intVal,
+            txt_dex.intVal,
+            txt_con.intVal,
+            txt_int.intVal,
+            txt_wis.intVal,
+            txt_cha.intVal,
+            racesViewModel.selectedRace.value!!,
+            charactersViewModel.insertId.value!!.toInt()
         )
-        abilityScoresViewModel.insertAbilityScores(*abilityScores)
+        findNavController().navigate(R.id.return_to_characters)
     }
 }
+

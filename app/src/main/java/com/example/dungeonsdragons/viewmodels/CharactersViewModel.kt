@@ -22,7 +22,11 @@ class CharactersViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch { characters.value = charactersRepository.getAllCharacters() }
     }
 
-    fun insertCharacter(character: Character) {
-        viewModelScope.launch { insertId.value = charactersRepository.insertCharacter(character) }
+    fun loadCharacterById() {
+
+    }
+
+    suspend fun insertCharacter() {
+        insertId.value = charactersRepository.insertCharacter(selectedCharacter.value!!)
     }
 }

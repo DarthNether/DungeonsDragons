@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/fragment_characters"
-        android:name="com.example.dungeonsdragons.views.ui.characters.fragment_characters"
+        android:name="com.example.dungeonsdragons.views.ui.characters.FragmentCharacters"
         android:label="Personajes"
         tools:layout="@layout/fragment_characters">
         <action
@@ -100,8 +100,7 @@
         android:label="fragment_character_scores"
         tools:layout="@layout/fragment_character_scores">
         <action
-            android:id="@+id/character_overview"
-            app:destination="@id/fragment_character_details"
-            app:enterAnim="@android:anim/fade_in" />
+            android:id="@+id/return_to_characters"
+            app:destination="@id/fragment_characters" />
     </fragment>
 </navigation>

@@ -18,7 +18,7 @@ interface ClassDao {
     suspend fun loadAllClasses(): Array<Class>
 
     @Query("SELECT * FROM classes_table WHERE id = :id")
-    fun loadClassesById(id: Int): Array<Class>
+    suspend fun loadClassById(id: Int): Class
 
     @Query("SELECT * FROM classes_table WHERE name LIKE :name")
     fun loadClassesByName(name: String): Array<Class>

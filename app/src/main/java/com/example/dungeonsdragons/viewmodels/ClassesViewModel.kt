@@ -20,4 +20,8 @@ class ClassesViewModel(app: Application) : AndroidViewModel(app) {
     fun loadClasses() {
         viewModelScope.launch { classes.value = classesRepository.getAllClasses() }
     }
+
+    fun loadClassById(id: Int) {
+        viewModelScope.launch { selectedClass.value = classesRepository.getClassById(id) }
+    }
 }

@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_characters.*
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 
-class fragment_characters : Fragment() {
+class FragmentCharacters : Fragment() {
     private val charactersViewModel by activityViewModels<CharactersViewModel>()
     private val charactersAdapter by lazy { CharactersAdapter(::selectCharacterAndNavigateToDetails) }
 
@@ -29,6 +29,8 @@ class fragment_characters : Fragment() {
             adapter = charactersAdapter
             layoutManager = LinearLayoutManager(context)
         }
+
+        charactersViewModel.loadCharacters()
 
         charactersViewModel.characters.observe(viewLifecycleOwner,
             Observer {
@@ -45,8 +47,8 @@ class fragment_characters : Fragment() {
                             null,
                             null,
                             null,
-                            null,
-                            null
+                            0,
+                            0
                         )
 
                     findNavController().navigate(R.id.create_character)

@@ -18,7 +18,7 @@ interface RaceDao {
     suspend fun loadAllRaces(): Array<Race>
 
     @Query("SELECT * FROM races_table WHERE id = :id")
-    fun loadRaceById(id: Int): Array<Race>
+    suspend fun loadRaceById(id: Int): Race
 
     @Query("SELECT * FROM races_table WHERE name LIKE :name")
     fun loadRaceByName(name: String): Array<Race>

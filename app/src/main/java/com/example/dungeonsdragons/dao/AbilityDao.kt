@@ -15,7 +15,7 @@ interface AbilityDao {
     fun deleteAbilities(vararg ability: Ability)
 
     @Query("SELECT * FROM abilities_table")
-    fun loadAllAbilities(): Array<Ability>
+    suspend fun loadAllAbilities(): Array<Ability>
 
     @Query("SELECT * FROM abilities_table where id = :id")
     fun loadAbilityById(id: Int): Array<Ability>

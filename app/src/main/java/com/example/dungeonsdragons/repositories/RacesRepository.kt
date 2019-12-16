@@ -4,6 +4,7 @@ import com.example.dungeonsdragons.dao.RaceDao
 
 class RacesRepository(private val racesDao: RaceDao) {
     suspend fun getAllRaces() = racesDao.loadAllRaces()
+    suspend fun getRaceById(id: Int) = racesDao.loadRaceById(id)
 
     companion object {
         @Volatile

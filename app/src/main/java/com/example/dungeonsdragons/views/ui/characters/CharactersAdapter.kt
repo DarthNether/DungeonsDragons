@@ -29,6 +29,7 @@ class CharactersAdapter(private val itemClickListener: (Character) -> Unit) :
         with(holder.itemView) {
             characters[position].let {
                 txt_character.text = it.char_name
+                setOnClickListener { _ -> itemClickListener(it) }
             }
         }
 }

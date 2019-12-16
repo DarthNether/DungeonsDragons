@@ -4,6 +4,7 @@ import com.example.dungeonsdragons.dao.ClassDao
 
 class ClassesRepository(private val classesDao: ClassDao) {
     suspend fun getAllClasses() = classesDao.loadAllClasses()
+    suspend fun getClassById(id: Int) = classesDao.loadClassById(id)
 
     companion object {
         @Volatile
