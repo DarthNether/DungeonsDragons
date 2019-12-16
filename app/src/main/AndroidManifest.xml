@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/launchericon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8611500080841379~1410786805" />
         <activity
             android:name=".views.MainActivity"
             android:label="@string/title_activity_splash_screen"
